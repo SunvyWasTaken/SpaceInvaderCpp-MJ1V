@@ -10,7 +10,7 @@ class PlayField
 {
 private:
 	std::vector<GameObject*> gameObjects;
-	std::vector<GameObject*> ObjectToDestroy;
+	std::vector<GameObject*> ObjectsToDestroy;
 	// Object to add on the next frame.
 	std::vector<GameObject*> ObjectToAdd;
 

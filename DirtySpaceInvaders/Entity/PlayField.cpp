@@ -12,16 +12,16 @@ void PlayField::Update()
 		gameObjects.push_back(i);
 	}
 	ObjectToAdd.clear();
-	/*if (!ObjectToDestroy.empty())
+	if (!ObjectsToDestroy.empty())
 	{
-		for (auto i : ObjectToDestroy)
+		for (auto i : ObjectsToDestroy)
 		{
 			auto it = std::find(gameObjects.begin(), gameObjects.end(), i);
 			delete *it;
 			gameObjects.erase(it);
 		}
-		ObjectToDestroy.clear();
-	}*/
+		ObjectsToDestroy.clear();
+	}
 	// Update list of active objects in the world
 	for (auto* CurrentObject : gameObjects)
 	{
@@ -74,5 +74,5 @@ void PlayField::AddObject(GameObject* newObj)
 
 void PlayField::RemoveObject(GameObject* newObj)
 {
-	ObjectToDestroy.push_back(newObj);
+	ObjectsToDestroy.push_back(newObj);
 }

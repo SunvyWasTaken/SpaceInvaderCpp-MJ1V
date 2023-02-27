@@ -8,6 +8,7 @@ VONGUE KEANU
 - J'ai retiré un cast dans le laser de l'alien parce que c'est déjà un game object de base.
 - Dans la fonction GetPlayer du playfield Le non était incorect.
 - J'ai mis le Update du GameObject de base à 0. Utilité? je sais pas.¯\ (ツ) /¯
+- Du coup finalement trouver y avait un delete dans le player laser et du coup lorsque je demande à mon manager de delete il y a une erreur.
 
 ## Treshold 1
 - Separation des class pour éviter que tous soit dans un seul fichier.

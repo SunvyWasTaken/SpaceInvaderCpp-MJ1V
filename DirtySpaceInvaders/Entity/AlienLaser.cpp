@@ -11,6 +11,11 @@ AlienLaser::AlienLaser()
 	sprite = RS_AlienLaser;
 }
 
+AlienLaser::~AlienLaser()
+{
+	delete[] m_objType;
+}
+
 void AlienLaser::Update(PlayField& world)
 {
 	bool deleted = false;
@@ -29,6 +34,6 @@ void AlienLaser::Update(PlayField& world)
 
 	if (deleted)
 	{
-		world.DespawnLaser((GameObject*)this);
+		world.DespawnLaser(this);
 	}
 }

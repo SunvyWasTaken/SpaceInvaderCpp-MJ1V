@@ -45,14 +45,14 @@ int main()
 	{
 		world.Update();
 
-		//RenderItemList rl;
-		//for (auto it : world.GameObjects())
-		//{
-		//	RenderItem a = RenderItem(Vector2D(it->pos), it->sprite);
-		//	rl.push_back(a);
-		//}
+		RenderItemList rl;
+		for (auto it : world.GameObjects())
+		{
+			RenderItem a = RenderItem(Vector2D(it->pos), it->sprite);
+			rl.push_back(a);
+		}
 
-		//consoleRenderer.Update(rl);
+		consoleRenderer.Update(rl);
 
 		// Sleep a bit so updates don't run too fast
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));

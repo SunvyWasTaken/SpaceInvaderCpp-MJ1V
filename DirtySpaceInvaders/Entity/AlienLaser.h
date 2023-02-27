@@ -5,7 +5,7 @@ class AlienLaser : public GameObject
 {
 public:
 	AlienLaser();
-	~AlienLaser() { delete[] m_objType; }
+	~AlienLaser();
 
 	void Update(PlayField& world);
 };

@@ -11,6 +11,7 @@ class PlayField
 private:
 	std::vector<GameObject*> gameObjects;
 	std::vector<GameObject*> ObjectToDestroy;
+	// Object to add on the next frame.
 	std::vector<GameObject*> ObjectToAdd;
 
 	Input* controllerInput;

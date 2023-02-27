@@ -5,7 +5,6 @@ class Alien : public GameObject
 {
 public:
 	Alien();
-	~Alien();
 
 private:
 	float health = 1.f;

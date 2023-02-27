@@ -9,12 +9,13 @@ class GameObject;
 class PlayField
 {
 private:
+
+	// Current list d'objet to update.
 	std::vector<GameObject*> gameObjects;
+	// Object to delete the next frame.
 	std::vector<GameObject*> ObjectsToDestroy;
 	// Object to add on the next frame.
 	std::vector<GameObject*> ObjectToAdd;
-
-	Input* controllerInput;
 
 public:
 	Vector2D bounds;
@@ -32,11 +33,17 @@ public:
 
 #pragma region Controller Input
 
+private:
+	Input* controllerInput;
+
+public:
 	Input* GetInputController() { return controllerInput; }
 
 	void SetController(Input* InputRef);
 
 #pragma endregion
+
+public:
 
 	void SpawnLaser(GameObject* newObj);
 

@@ -11,11 +11,6 @@ AlienLaser::AlienLaser()
 	sprite = RS_AlienLaser;
 }
 
-AlienLaser::~AlienLaser()
-{
-	delete[] m_objType;
-}
-
 void AlienLaser::Update(PlayField& world)
 {
 	bool deleted = false;

@@ -11,11 +11,6 @@ PlayerLaser::PlayerLaser()
 	sprite = RS_PlayerLaser;
 }
 
-PlayerLaser::~PlayerLaser()
-{
-	delete[] m_objType;
-}
-
 void PlayerLaser::Update(PlayField& world)
 {
 	bool deleted = false;

@@ -15,11 +15,6 @@ Alien::Alien()
 	sprite = RS_Alien;
 }
 
-Alien::~Alien()
-{
-	delete m_objType;
-}
-
 void Alien::Update(PlayField& world)
 {
 	pos.x += direction * velocity;

@@ -5,7 +5,6 @@ class PlayerLaser : public GameObject
 {
 public:
 	PlayerLaser();
-	~PlayerLaser();
 
 	void Update(PlayField& world);
 };

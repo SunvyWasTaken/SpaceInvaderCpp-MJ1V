@@ -12,11 +12,6 @@ PlayerShip::PlayerShip()
 	sprite = RS_Player;
 }
 
-PlayerShip::~PlayerShip()
-{
-	delete[] m_objType;
-}
-
 void PlayerShip::Update(PlayField& world)
 {
 	if (world.GetInputController()->Left())

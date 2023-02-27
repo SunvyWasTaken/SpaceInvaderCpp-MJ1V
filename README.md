@@ -15,7 +15,7 @@ world.AddObject(Laser);
 ```
 - Il manquer des parenthèses lors de la création du player.
 - J'ai retiré un cast dans le laser de l'alien parce que c'est déjà un game object de base.
-- Dans la fonction GetPlayer du playfield Le non était incorect.
+- Dans la fonction GetPlayer du playfield Le nom "PlayerShip" était incorect.
 - J'ai mis le Update du GameObject de base à 0. Utilité? je sais pas.¯\ (ツ) /¯
 - Du coup j'ai notify que la boucle for se casser si on la modifier dans la boucle et du coup j'ai ajouté 2 variables pour savoir les objets à ajouté à la prochaine frame.
 Et la liste des objets à supprimer à la prochaine frame.

@@ -140,12 +140,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleRenderer.h" />
+    <ClInclude Include="Entity\Alien.h" />
+    <ClInclude Include="Entity\AlienLaser.h" />
     <ClInclude Include="Entity\GameObject.h" />
+    <ClInclude Include="Entity\PlayerLaser.h" />
+    <ClInclude Include="Entity\PlayerShip.h" />
+    <ClInclude Include="Entity\PlayField.h" />
+    <ClInclude Include="Input\Input.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleRenderer.cpp" />
+    <ClCompile Include="Entity\Alien.cpp" />
+    <ClCompile Include="Entity\AlienLaser.cpp" />
     <ClCompile Include="Entity\GameObject.cpp" />
+    <ClCompile Include="Entity\PlayerLaser.cpp" />
+    <ClCompile Include="Entity\PlayerShip.cpp" />
+    <ClCompile Include="Entity\PlayField.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>

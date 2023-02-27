@@ -17,4 +17,4 @@ Et la liste des objets à supprimer à la prochaine frame.
 - J'ai du mettre le rGen en static pour qu'il soit dans les inputs et dans le main.
 - J'ai mis le controllerInput du PlayField en private et du coup ajout d'un Getter et un Setter.
 
-= Ajout de SFML
+= Ajout de SFML =

@@ -11,11 +11,10 @@ VONGUE KEANU
 - Du coup j'ai notify que la boucle for se casser si on la modifier dans la boucle et du coup j'ai ajouté 2 variables pour savoir les objets à ajouté à la prochaine frame.
 Et la liste des objets à supprimer à la prochaine frame.
 - Du coup finalement trouver y avait un delete dans le player laser et du coup lorsque je demande à mon manager de delete il y a une erreur.
-```~~delete this~~~```
 
 ## Treshold 1
 - Separation des class pour éviter que tous soit dans un seul fichier.
 - J'ai du mettre le rGen en static pour qu'il soit dans les inputs et dans le main.
 - J'ai mis le controllerInput du PlayField en private et du coup ajout d'un Getter et un Setter.
 
-= Ajout de SFML =
+### [^1]: Ajout de SFML

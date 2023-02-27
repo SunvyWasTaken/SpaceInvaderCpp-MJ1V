@@ -26,13 +26,13 @@ int main()
 	// Populate aliens
 	for (int k = 0; k < 20; k++)
 	{
-		Alien& a = *(new Alien);
-		a.pos.x = (float)xCoord(rGen);
-		a.pos.x = (float)yCoord(rGen);
-		world.AddObject(&a);
+		Alien* a = new Alien();
+		a->pos.x = (float)xCoord(rGen);
+		a->pos.x = (float)yCoord(rGen);
+		world.AddObject(a);
 	}
 
-	// set un controller.
+	// set a controller.
 	Input* CurrentInput = new RndInput();
 	world.SetController(CurrentInput);
 
@@ -45,14 +45,14 @@ int main()
 	{
 		world.Update();
 
-		RenderItemList rl;
-		for (auto it : world.GameObjects())
-		{
-			RenderItem a = RenderItem(Vector2D(it->pos), it->sprite);
-			rl.push_back(a);
-		}
+		//RenderItemList rl;
+		//for (auto it : world.GameObjects())
+		//{
+		//	RenderItem a = RenderItem(Vector2D(it->pos), it->sprite);
+		//	rl.push_back(a);
+		//}
 
-		consoleRenderer.Update(rl);
+		//consoleRenderer.Update(rl);
 
 		// Sleep a bit so updates don't run too fast
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));

@@ -10,6 +10,6 @@ public:
 	Vector2D pos;
 	unsigned char sprite;
 
-	virtual void Update(PlayField& world) {};
+	virtual void Update(PlayField& world) = 0;
 	bool DecreaseHealth() { return true; };
 };

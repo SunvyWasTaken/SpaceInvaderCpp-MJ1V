@@ -8,9 +8,9 @@ PlayField::PlayField(Vector2D iBounds) : bounds(iBounds), controllerInput(nullpt
 void PlayField::Update()
 {
 	// Update list of active objects in the world
-	for (auto it : gameObjects)
+	for (auto* CurrentObject : gameObjects)
 	{
-		it->Update(*this);
+		CurrentObject->Update(*this);
 	}
 }
 
@@ -54,12 +54,12 @@ void PlayField::DespawnLaser(GameObject* newObj)
 
 void PlayField::AddObject(GameObject* newObj)
 {
-	ObjectToAdd.push_back(newObj);
+	gameObjects.push_back(newObj);
 }
 
 void PlayField::RemoveObject(GameObject* newObj)
 {
-	auto it = std::find_if(gameObjects.begin(), gameObjects.end(), [&](GameObject* in) { return (in == newObj); });
+	auto it = std::find(gameObjects.begin(), gameObjects.end(), newObj);
 	delete* it;
 	gameObjects.erase(it);
 }

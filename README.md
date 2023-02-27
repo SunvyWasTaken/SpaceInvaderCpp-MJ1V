@@ -7,7 +7,7 @@ VONGUE KEANU
 ~~```
 AlienLaser& Laser = (new AlienLaser);
 world.AddObject(*Laser);
-~~```
+```~~
 ```
 AlienLaser* Laser = new AlienLaser();
 world.AddObject(Laser);

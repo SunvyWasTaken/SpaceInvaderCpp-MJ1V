@@ -23,8 +23,9 @@ Et la liste des objets à supprimer à la prochaine frame.
 
 ## Treshold 1
 - Separation des class pour éviter que tous soit dans un seul fichier.
-- J'ai du mettre le rGen en static pour qu'il soit dans les inputs et dans le main.
+- J'ai du crée une fonction dans le PlayField qui récup le rGen que je définie dans le main pour ensuite pouvoir le récup dans le .cpp des inputs.
 - J'ai mis le controllerInput du PlayField en private et du coup ajout d'un Getter et un Setter.
 - J'ai déplacer le destroy des gameObject dans le parents pour évité de le refaire à chaque fois.
 
 #### Ajout de SFML
+- Succée j'arriver pas parce que je m'étais projectDir et non pas solutionDir.

@@ -37,7 +37,7 @@ void Alien::Update(PlayField& world)
 	}
 
 	floatRand fireRate(0, 1);
-	if (fireRate(rGen) < 0.5 && world.AlienLasers > 0)
+	if (fireRate(*GetrGen()) < 0.5 && world.AlienLasers > 0)
 	{
 		//Spawn laser
 		GameObject* newLaser = new AlienLaser();

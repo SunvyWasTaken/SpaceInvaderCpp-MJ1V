@@ -12,6 +12,13 @@
 typedef std::uniform_int_distribution<int> intRand;
 typedef std::uniform_real_distribution<float> floatRand;
 
+std::default_random_engine rGen;
+
+std::default_random_engine* GetrGen()
+{
+	return &rGen;
+}
+
 int main()
 {
 	rGen.seed(1);

@@ -4,6 +4,11 @@
 
 #include <vector>
 
+namespace sf
+{
+	class RenderWindow;
+}
+
 class GameObject;
 
 class PlayField
@@ -31,6 +36,8 @@ public:
 
 	GameObject* GetPlayerObject();
 
+	void Draw(sf::RenderWindow& _windows);
+
 #pragma region Controller Input
 
 private:
@@ -53,3 +60,5 @@ public:
 
 	void RemoveObject(GameObject* newObj);
 };
+
+std::default_random_engine* GetrGen();

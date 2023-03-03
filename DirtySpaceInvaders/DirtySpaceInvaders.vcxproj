@@ -78,6 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <PublicIncludeDirectories>$(ProjectDir)Game;$(PublicIncludeDirectories)</PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -142,25 +143,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleRenderer.h" />
-    <ClInclude Include="Entity\Alien.h" />
-    <ClInclude Include="Entity\AlienLaser.h" />
-    <ClInclude Include="Entity\GameObject.h" />
-    <ClInclude Include="Entity\PlayerLaser.h" />
-    <ClInclude Include="Entity\PlayerShip.h" />
-    <ClInclude Include="Entity\PlayField.h" />
-    <ClInclude Include="Input\Input.h" />
-    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Game\Engine\PlayField.h" />
+    <ClInclude Include="Game\Engine\Vector.h" />
+    <ClInclude Include="Game\Entity\Alien.h" />
+    <ClInclude Include="Game\Entity\AlienLaser.h" />
+    <ClInclude Include="Game\Entity\GameObject.h" />
+    <ClInclude Include="Game\Entity\PlayerLaser.h" />
+    <ClInclude Include="Game\Entity\PlayerShip.h" />
+    <ClInclude Include="Game\Input\Input.h" />
+    <ClInclude Include="Game\Render\ConsoleRenderer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleRenderer.cpp" />
-    <ClCompile Include="Entity\Alien.cpp" />
-    <ClCompile Include="Entity\AlienLaser.cpp" />
-    <ClCompile Include="Entity\GameObject.cpp" />
-    <ClCompile Include="Entity\PlayerLaser.cpp" />
-    <ClCompile Include="Entity\PlayerShip.cpp" />
-    <ClCompile Include="Entity\PlayField.cpp" />
-    <ClCompile Include="Input\Input.cpp" />
+    <ClCompile Include="Game\Engine\PlayField.cpp" />
+    <ClCompile Include="Game\Entity\Alien.cpp" />
+    <ClCompile Include="Game\Entity\AlienLaser.cpp" />
+    <ClCompile Include="Game\Entity\GameObject.cpp" />
+    <ClCompile Include="Game\Entity\PlayerLaser.cpp" />
+    <ClCompile Include="Game\Entity\PlayerShip.cpp" />
+    <ClCompile Include="Game\Input\Input.cpp" />
+    <ClCompile Include="Game\Render\ConsoleRenderer.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>

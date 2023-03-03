@@ -1,7 +1,7 @@
-#include "ConsoleRenderer.h"
-#include "Entity/Alien.h"
-#include "Entity/PlayerShip.h"
-#include "Entity/PlayField.h"
+#include "Game/Render/ConsoleRenderer.h"
+#include "Game/Entity/Alien.h"
+#include "Game/Entity/PlayerShip.h"
+#include "Game/Engine/PlayField.h"
 
 #include <random>
 #include <thread>

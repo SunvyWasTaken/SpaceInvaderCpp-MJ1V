@@ -25,63 +25,75 @@
     <Filter Include="Source Files\Input">
       <UniqueIdentifier>{d35b199c-1f6e-454f-a195-8bf48d3f34a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Render">
+      <UniqueIdentifier>{2a7e7511-8fe3-46e8-89b9-efb310ed8d97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render">
+      <UniqueIdentifier>{87c58b7b-8e0a-46e3-9717-512395e8e1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{f2fbb021-bbb0-4c30-889f-8322941690cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{65d36902-6934-4c98-aa89-97a136aa9800}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleRenderer.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Game\Engine\Vector.h">
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity\GameObject.h">
+    <ClInclude Include="Game\Entity\Alien.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Entity\PlayField.h">
+    <ClInclude Include="Game\Entity\AlienLaser.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Entity\AlienLaser.h">
+    <ClInclude Include="Game\Entity\GameObject.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Entity\Alien.h">
+    <ClInclude Include="Game\Entity\PlayerLaser.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Entity\PlayerLaser.h">
+    <ClInclude Include="Game\Entity\PlayerShip.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Entity\PlayerShip.h">
-      <Filter>Header Files\Entity</Filter>
+    <ClInclude Include="Game\Engine\PlayField.h">
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Input\Input.h">
+    <ClInclude Include="Game\Input\Input.h">
       <Filter>Header Files\Input</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Render\ConsoleRenderer.h">
+      <Filter>Header Files\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entity\GameObject.cpp">
+    <ClCompile Include="Game\Entity\GameObject.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Entity\PlayField.cpp">
+    <ClCompile Include="Game\Entity\Alien.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Entity\AlienLaser.cpp">
+    <ClCompile Include="Game\Entity\AlienLaser.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Entity\Alien.cpp">
+    <ClCompile Include="Game\Entity\PlayerLaser.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Entity\PlayerLaser.cpp">
+    <ClCompile Include="Game\Entity\PlayerShip.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Entity\PlayerShip.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="Game\Engine\PlayField.cpp">
+      <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Input\Input.cpp">
+    <ClCompile Include="Game\Input\Input.cpp">
       <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Render\ConsoleRenderer.cpp">
+      <Filter>Source Files\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

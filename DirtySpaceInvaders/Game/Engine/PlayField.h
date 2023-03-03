@@ -1,6 +1,6 @@
 #pragma once
-#include "../Input/Input.h"
-#include "../Vector.h"
+#include "Game/Input/Input.h"
+#include "Game/Engine/Vector.h"
 
 #include <vector>
 

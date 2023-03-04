@@ -11,6 +11,10 @@ AlienLaser::AlienLaser()
 	sprite = RS_AlienLaser;
 }
 
+void AlienLaser::BeginPlay()
+{
+}
+
 void AlienLaser::Update(PlayField& world)
 {
 	bool deleted = false;

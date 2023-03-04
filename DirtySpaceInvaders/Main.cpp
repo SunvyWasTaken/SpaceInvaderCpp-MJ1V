@@ -33,7 +33,7 @@ int main()
 	// Populate aliens
 	for (int k = 0; k < 20; k++)
 	{
-		Alien* a = new Alien();
+		Alien* a = UActorFactory::GetFactory()->CreateActor<Alien>();
 		a->pos.x = (float)xCoord(rGen);
 		a->pos.y = (float)yCoord(rGen);
 		world.AddObject(a);

@@ -75,6 +75,9 @@
     <ClInclude Include="Game\Input\PlayerInputAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Engine\UActorFactory.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -105,10 +108,13 @@
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="Game\Input\InputManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Input</Filter>
     </ClCompile>
     <ClCompile Include="Game\Input\PlayerInputAction.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Engine\UActorFactory.cpp">
+      <Filter>Source Files\Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

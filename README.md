@@ -29,7 +29,8 @@ Et la liste des objets à supprimer à la prochaine frame.
 - J'ai mis le controllerInput du PlayField en private et du coup ajout d'un Getter et un Setter.
 - J'ai déplacer le destroy des gameObject dans le parents pour évité de le refaire à chaque fois.
 - Pour changer les touches on peut le faire directement dans le PlayerBinds.h
-_ Changement de ```strcpy``` en ```strcpy_s``` cause j'avais une error qui me disait que c'était "_unsafe_".
+- Changement de ```strcpy``` en ```strcpy_s``` cause j'avais une error qui me disait que c'était "_unsafe_".
+- Création d'une factory pour les actors comme ça je peux assigner un controller à un player directement et aussi la création n'a pas lieux n'importe ou. Factory en singleton.
 
 #### Ajout de SFML
 - Succée j'arriver pas parce que je m'étais projectDir et non pas solutionDir.

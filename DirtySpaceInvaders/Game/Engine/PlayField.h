@@ -1,6 +1,7 @@
 #pragma once
 #include "Game/Input/Input.h"
 #include "Vector.h"
+#include "Game/Engine/UActorFactory.h"
 
 #include <vector>
 

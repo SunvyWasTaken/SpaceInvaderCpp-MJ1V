@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Game\Engine\PlayField.h" />
+    <ClInclude Include="Game\Engine\UActorFactory.h" />
     <ClInclude Include="Game\Engine\Vector.h" />
     <ClInclude Include="Game\Entity\Alien.h" />
     <ClInclude Include="Game\Entity\AlienLaser.h" />
@@ -163,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Engine\PlayField.cpp" />
+    <ClCompile Include="Game\Engine\UActorFactory.cpp" />
     <ClCompile Include="Game\Entity\Alien.cpp" />
     <ClCompile Include="Game\Entity\AlienLaser.cpp" />
     <ClCompile Include="Game\Entity\GameObject.cpp" />

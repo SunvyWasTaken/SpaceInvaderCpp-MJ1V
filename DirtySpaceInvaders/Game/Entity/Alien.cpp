@@ -40,7 +40,7 @@ void Alien::Update(PlayField& world)
 	if (fireRate(*GetrGen()) < 0.5 && world.AlienLasers > 0)
 	{
 		//Spawn laser
-		GameObject* newLaser = new AlienLaser();
+		GameObject* newLaser = UActorFactory::GetFactory()->CreateActor<AlienLaser>();
 		newLaser->pos = pos;
 		world.SpawnLaser(newLaser);
 	}

@@ -7,7 +7,7 @@
 PlayerLaser::PlayerLaser()
 {
 	m_objType = new char[64];
-	strcpy(m_objType, "PlayerLaser");
+	strcpy_s(m_objType, sizeof(m_objType), "PlayerLaser");
 	sprite = RS_PlayerLaser;
 }
 

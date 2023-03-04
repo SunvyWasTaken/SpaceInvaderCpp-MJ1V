@@ -8,7 +8,7 @@
 PlayerShip::PlayerShip()
 {
 	m_objType = new char[64];
-	strcpy_s(m_objType, sizeof(m_objType), "PlayerShip");
+	strcpy(m_objType, "PlayerShip");
 	sprite = RS_Player;
 }
 
@@ -22,7 +22,7 @@ void PlayerShip::Update(PlayField& world)
 	if (world.GetInputController()->Fire() && world.PlayerLasers > 0)
 	{
 		//Spawn laser
-		GameObject* newLaser = UActorFactory::GetFactory()->CreateActor<PlayerLaser>();
+		GameObject* newLaser = new PlayerLaser();
 		newLaser->pos = pos;
 		world.SpawnLaser(newLaser);
 	}

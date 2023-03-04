@@ -3,9 +3,7 @@
 
 class Alien : public GameObject
 {
-friend class UActorFactory;
-private:
-
+public:
 	Alien();
 
 private:

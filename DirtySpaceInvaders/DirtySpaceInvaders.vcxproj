@@ -156,9 +156,7 @@
     <ClInclude Include="Game\Entity\PlayerLaser.h" />
     <ClInclude Include="Game\Entity\PlayerShip.h" />
     <ClInclude Include="Game\Input\Input.h" />
-    <ClInclude Include="Game\Input\InputManager.h" />
-    <ClInclude Include="Game\Input\PlayerBinds.h" />
-    <ClInclude Include="Game\Input\PlayerInputAction.h" />
+    <ClInclude Include="Game\Input\PlayerBind.h" />
     <ClInclude Include="Game\Render\ConsoleRenderer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -169,8 +167,6 @@
     <ClCompile Include="Game\Entity\PlayerLaser.cpp" />
     <ClCompile Include="Game\Entity\PlayerShip.cpp" />
     <ClCompile Include="Game\Input\Input.cpp" />
-    <ClCompile Include="Game\Input\InputManager.cpp" />
-    <ClCompile Include="Game\Input\PlayerInputAction.cpp" />
     <ClCompile Include="Game\Render\ConsoleRenderer.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>

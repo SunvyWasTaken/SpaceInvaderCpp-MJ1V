@@ -28,8 +28,9 @@ Et la liste des objets à supprimer à la prochaine frame.
 - J'ai du crée une fonction dans le PlayField qui récup le rGen que je définie dans le main pour ensuite pouvoir le récup dans le .cpp des inputs.
 - J'ai mis le controllerInput du PlayField en private et du coup ajout d'un Getter et un Setter.
 - J'ai déplacer le destroy des gameObject dans le parents pour évité de le refaire à chaque fois.
- - ~Changement de ```strcpy``` en ```strcpy_s``` cause j'avais une error qui me disait que c'était "_unsafe_".~
- - ça n'a pas fonctionner du coup j'ai du mettre ```#pragma warning(disable : 4996)``` sur le fichier qui ne fonctionner pas.
+- Les touches peuvent être changer dans le fichier PlayerBind.h
+- ça n'a pas fonctionner du coup j'ai du mettre ```#pragma warning(disable : 4996)``` sur le fichier qui ne fonctionner pas.
+	- ~Changement de ```strcpy``` en ```strcpy_s``` cause j'avais une error qui me disait que c'était "_unsafe_".~
 
 #### Ajout de SFML
 - Succée j'arrivais pas parce que je m'étais projectDir et non pas solutionDir.

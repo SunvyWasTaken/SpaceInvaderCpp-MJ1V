@@ -19,3 +19,10 @@ public:
 	virtual bool Right();
 	virtual bool Fire();
 };
+
+class PlayerInput : public Input
+{
+	virtual bool Left();
+	virtual bool Right();
+	virtual bool Fire();
+};

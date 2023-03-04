@@ -41,7 +41,7 @@ int main()
 	}
 
 	// set a controller.
-	Input* CurrentInput = new RndInput();
+	Input* CurrentInput = new PlayerInput();
 	world.SetController(CurrentInput);
 
 	// Add player
@@ -49,7 +49,7 @@ int main()
 	p->pos = Vector2D(40, 27);
 	world.AddObject(p);
 
-	for (int i = 0; i < 100; i++)
+	while (true)
 	{
 		world.Update();
 

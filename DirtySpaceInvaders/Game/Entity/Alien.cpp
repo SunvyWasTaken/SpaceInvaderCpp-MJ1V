@@ -1,7 +1,7 @@
 #include "Alien.h"
-#include "PlayField.h"
+#include "Game/Engine/PlayField.h"
 #include "AlienLaser.h"
-#include "../ConsoleRenderer.h"
+#include "Game/Render/ConsoleRenderer.h"
 
 #include <random>
 #include <string>

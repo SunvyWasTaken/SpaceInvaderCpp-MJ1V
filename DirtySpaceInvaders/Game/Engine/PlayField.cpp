@@ -1,6 +1,6 @@
 #include "PlayField.h"
-#include "../Vector.h"
-#include "GameObject.h"
+#include "Game/Engine/Vector.h"
+#include "Game/Entity/GameObject.h"
 
 PlayField::PlayField(Vector2D iBounds) : bounds(iBounds), controllerInput(nullptr)
 {}

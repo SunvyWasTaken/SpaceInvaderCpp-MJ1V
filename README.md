@@ -23,6 +23,8 @@ Et la liste des objets à supprimer à la prochaine frame.
 
 ## Treshold 1
 - Separation des class pour éviter que tous soit dans un seul fichier.
+- J'ai aussi rangé les fichiers pour éviter de mettre ```../``` sur certain de mes includes.
+- J'ai notifier aussi que mes ennemies spawn tous sur la même ligne parce qu'on ne set pas leur Y mais que leurs X dans le Main.
 - J'ai du crée une fonction dans le PlayField qui récup le rGen que je définie dans le main pour ensuite pouvoir le récup dans le .cpp des inputs.
 - J'ai mis le controllerInput du PlayField en private et du coup ajout d'un Getter et un Setter.
 - J'ai déplacer le destroy des gameObject dans le parents pour évité de le refaire à chaque fois.

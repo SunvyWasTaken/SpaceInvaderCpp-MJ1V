@@ -1,6 +1,6 @@
 #include "PlayerLaser.h"
-#include "PlayField.h"
-#include "../ConsoleRenderer.h"
+#include "Game/Engine/PlayField.h"
+#include "Game/Render/ConsoleRenderer.h"
 
 #include <string>
 

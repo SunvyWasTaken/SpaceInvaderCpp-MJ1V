@@ -35,7 +35,7 @@ int main()
 	{
 		Alien* a = new Alien();
 		a->pos.x = (float)xCoord(rGen);
-		a->pos.x = (float)yCoord(rGen);
+		a->pos.y = (float)yCoord(rGen);
 		world.AddObject(a);
 	}
 

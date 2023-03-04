@@ -1,6 +1,5 @@
 #include <vector>
 #include <iostream>
-#include "Vector.h"
 #include "ConsoleRenderer.h"
 
 #include <Windows.h>

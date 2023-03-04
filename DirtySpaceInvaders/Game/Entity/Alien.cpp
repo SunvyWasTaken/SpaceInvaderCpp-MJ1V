@@ -11,7 +11,7 @@ typedef std::uniform_real_distribution<float> floatRand;
 Alien::Alien() 
 {
 	m_objType = new char[64];
-	strcpy(m_objType, "AlienShip");
+	strcpy_s(m_objType, sizeof(m_objType), "AlienShip");
 	sprite = RS_Alien;
 }
 

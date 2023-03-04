@@ -80,7 +80,7 @@
     <LinkIncremental>true</LinkIncremental>
     <PublicIncludeDirectories>
     </PublicIncludeDirectories>
-    <AllProjectIncludesArePublic>true</AllProjectIncludesArePublic>
+    <AllProjectIncludesArePublic>false</AllProjectIncludesArePublic>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -117,15 +117,17 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalModuleDependencies>%(AdditionalModuleDependencies)</AdditionalModuleDependencies>
+      <AdditionalModuleDependencies>
+      </AdditionalModuleDependencies>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\lib\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,6 +155,9 @@
     <ClInclude Include="Game\Entity\PlayerLaser.h" />
     <ClInclude Include="Game\Entity\PlayerShip.h" />
     <ClInclude Include="Game\Input\Input.h" />
+    <ClInclude Include="Game\Input\InputManager.h" />
+    <ClInclude Include="Game\Input\PlayerBinds.h" />
+    <ClInclude Include="Game\Input\PlayerInputAction.h" />
     <ClInclude Include="Game\Render\ConsoleRenderer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +168,8 @@
     <ClCompile Include="Game\Entity\PlayerLaser.cpp" />
     <ClCompile Include="Game\Entity\PlayerShip.cpp" />
     <ClCompile Include="Game\Input\Input.cpp" />
+    <ClCompile Include="Game\Input\InputManager.cpp" />
+    <ClCompile Include="Game\Input\PlayerInputAction.cpp" />
     <ClCompile Include="Game\Render\ConsoleRenderer.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>

@@ -7,7 +7,7 @@
 AlienLaser::AlienLaser()
 {
 	m_objType = new char[64];
-	strcpy(m_objType, "AlienLaser");
+	strcpy_s(m_objType, sizeof(m_objType), "AlienLaser");
 	sprite = RS_AlienLaser;
 }
 

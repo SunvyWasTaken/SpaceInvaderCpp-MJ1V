@@ -12,7 +12,7 @@ void FInputManager::Update(float fDeltaTime)
 		const sf::Keyboard::Key& key = CurrentInput.first;
 		const FInputBindInfo& bindInfo = CurrentInput.second;
 
-		if (sf::Keyboard::isKeyPressed(CurrentInput.first))
+		if (sf::Keyboard::isKeyPressed(key))
 		{
 			SetPlayerActionState(bindInfo.PlayerIndex, bindInfo.Action, 0.f);
 		}

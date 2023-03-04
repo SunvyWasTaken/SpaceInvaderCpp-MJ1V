@@ -2,6 +2,9 @@
 #include "Game/Engine/PlayField.h"
 #include "AlienLaser.h"
 #include "Game/Render/ConsoleRenderer.h"
+#pragma warning(disable : 4996)
+
+
 
 #include <random>
 #include <string>
@@ -11,7 +14,7 @@ typedef std::uniform_real_distribution<float> floatRand;
 Alien::Alien() 
 {
 	m_objType = new char[64];
-	strcpy_s(m_objType, sizeof(m_objType), "AlienShip");
+	strcpy(m_objType, "AlienShip");
 	sprite = RS_Alien;
 }
 

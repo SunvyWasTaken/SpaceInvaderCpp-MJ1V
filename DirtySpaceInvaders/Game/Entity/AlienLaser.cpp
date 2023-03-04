@@ -1,13 +1,14 @@
 #include "AlienLaser.h"
 #include "Game/Engine/PlayField.h"
 #include "Game/Render/ConsoleRenderer.h"
+#pragma warning(disable : 4996)
 
 #include <string>
 
 AlienLaser::AlienLaser()
 {
 	m_objType = new char[64];
-	strcpy_s(m_objType, sizeof(m_objType), "AlienLaser");
+	strcpy(m_objType, "AlienLaser");
 	sprite = RS_AlienLaser;
 }
 

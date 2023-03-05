@@ -27,8 +27,8 @@ void PlayerLaser::Update(PlayField& world)
 		{
 			if (pos.IntCmp(CurrentObject->pos))
 			{
-				world.RemoveObject(CurrentObject);
 				deleted = true;
+				world.RemoveObject(CurrentObject);
 				break;
 			}
 		}

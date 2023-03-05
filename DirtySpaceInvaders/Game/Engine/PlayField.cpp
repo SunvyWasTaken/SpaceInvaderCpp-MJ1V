@@ -38,16 +38,6 @@ GameObject* PlayField::GetPlayerObject()
 		return nullptr;
 }
 
-const std::vector<GameObject*>& PlayField::GetAllOtherObject() const
-{
-	std::vector<GameObject*> NonePlayer = gameObjects;
-	auto it = std::find_if(NonePlayer.begin(), NonePlayer.end(), [](GameObject* in) { return (strcmp(in->m_objType, "PlayerShip") == 0); });
-	if (it != NonePlayer.end()) {
-		NonePlayer.erase(it);
-	}
-	return NonePlayer;
-}
-
 void PlayField::SetController(Input* InputRef)
 {
 	if (!InputRef)

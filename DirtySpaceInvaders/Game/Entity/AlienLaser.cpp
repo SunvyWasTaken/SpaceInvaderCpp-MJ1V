@@ -26,6 +26,17 @@ void AlienLaser::Update(PlayField& world)
 	{
 		return;
 	}
+	for (const auto& Object : world.GameObjects())
+	{
+		if (strcmp(Object->m_objType, "Rock") == 0)
+		{
+			if (pos.IntCmp(Object->pos))
+			{
+				deleted = true;
+				break;
+			}
+		}
+	}
 	if (pos.IntCmp(player->pos))
 	{
 		deleted = true;

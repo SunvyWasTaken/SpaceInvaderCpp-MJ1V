@@ -39,7 +39,17 @@ Et la liste des objets à supprimer à la prochaine frame.
 	- Ajout de l'enum dans le render RS_Rock.
 	- Ajout de la collision entre le laser et le rock.
 	```
-	if(strcmp(CurrentObject->m_ObjectType, "Rock") == 0)
+	for (const auto& Object : world.GameObjects())
+	{
+		if (strcmp(Object->m_objType, "Rock") == 0)
+		{
+			if (pos.IntCmp(Object->pos))
+			{
+				deleted = true;
+				break;
+			}
+		}
+	}
 	```
 
 #### Ajout de SFML

@@ -36,8 +36,6 @@ public:
 
 	GameObject* GetPlayerObject();
 
-	const std::vector<GameObject*>& GetAllOtherObject() const;
-
 #pragma region Controller Input
 
 private:

@@ -42,6 +42,7 @@ int main()
 		world.AddObject(a);
 	}
 
+	// ajour des roches
 	for (int i = 0; i < 10; i++)
 	{
 		ARock* r = new ARock();
@@ -74,11 +75,9 @@ int main()
 
 		// Sleep a bit so updates don't run too fast
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) || !world.GetPlayerObject())
 		{
-			return EXIT_SUCCESS;
+			exit(0);
 		}
-
 	}
 }

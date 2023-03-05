@@ -47,10 +47,10 @@ void PlayField::SetController(Input* InputRef)
 
 void PlayField::SpawnLaser(GameObject* newObj)
 {
-	if (strcmp(newObj->m_objType, "AlienLaser") == 0)
+	if (newObj->IsType("AlienLaser"))
 		AlienLasers--;
 
-	else if (strcmp(newObj->m_objType, "PlayerLaser") == 0)
+	else if (newObj->IsType("PlayerLaser"))
 		PlayerLasers--;
 
 	AddObject(newObj);
@@ -58,10 +58,10 @@ void PlayField::SpawnLaser(GameObject* newObj)
 
 void PlayField::DespawnLaser(GameObject* newObj)
 {
-	if (strcmp(newObj->m_objType, "AlienLaser") == 0)
+	if (newObj->IsType("AlienLaser"))
 		AlienLasers++;
 
-	else if (strcmp(newObj->m_objType, "PlayerLaser") == 0)
+	else if (newObj->IsType("PlayerLaser"))
 		PlayerLasers++;
 
 	RemoveObject(newObj);

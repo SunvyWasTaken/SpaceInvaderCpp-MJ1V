@@ -23,7 +23,7 @@ void PlayerLaser::Update(PlayField& world)
 		{
 			continue;
 		}
-		if (strcmp(CurrentObject->m_objType, "AlienShip") == 0)
+		if (CurrentObject->IsType("AlienShip"))
 		{
 			if (pos.IntCmp(CurrentObject->pos))
 			{
@@ -32,11 +32,12 @@ void PlayerLaser::Update(PlayField& world)
 				break;
 			}
 		}
-		else if (strcmp(CurrentObject->m_objType, "Rock") == 0)
+		else if (CurrentObject->IsType("Rock"))
 		{
 			if (pos.IntCmp(CurrentObject->pos))
 			{
 				deleted = true;
+				break;
 			}
 		}
 	}

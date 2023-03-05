@@ -11,6 +11,7 @@ public:
 	Vector2D pos;
 	unsigned char sprite = '\0';
 
+	bool IsType(const char* type);
 	virtual void Update(PlayField& world) = 0;
 	bool DecreaseHealth() { return true; };
 };

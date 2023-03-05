@@ -28,7 +28,7 @@ void AlienLaser::Update(PlayField& world)
 	}
 	for (const auto& Object : world.GameObjects())
 	{
-		if (strcmp(Object->m_objType, "Rock") == 0)
+		if (Object->IsType("Rock"))
 		{
 			if (pos.IntCmp(Object->pos))
 			{

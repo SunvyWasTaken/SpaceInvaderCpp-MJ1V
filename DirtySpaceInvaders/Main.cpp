@@ -1,7 +1,9 @@
-#include "ConsoleRenderer.h"
-#include "Entity/Alien.h"
-#include "Entity/PlayerShip.h"
-#include "Entity/PlayField.h"
+#include "Game/Render/ConsoleRenderer.h"
+#include "Game/Entity/Alien.h"
+#include "Game/Entity/Rock.h"
+#include "Game/Entity/PlayerShip.h"
+#include "Game/Engine/PlayField.h"
+#include <SFML/Window/Keyboard.hpp>
 
 #include <random>
 #include <thread>
@@ -9,8 +11,16 @@
 #include <string>
 
 
+
 typedef std::uniform_int_distribution<int> intRand;
 typedef std::uniform_real_distribution<float> floatRand;
+
+std::default_random_engine rGen;
+
+std::default_random_engine* GetrGen()
+{
+	return &rGen;
+}
 
 int main()
 {
@@ -28,12 +38,20 @@ int main()
 	{
 		Alien* a = new Alien();
 		a->pos.x = (float)xCoord(rGen);
-		a->pos.x = (float)yCoord(rGen);
+		a->pos.y = (float)yCoord(rGen);
 		world.AddObject(a);
 	}
 
+	for (int i = 0; i < 10; i++)
+	{
+		ARock* r = new ARock();
+		r->pos.x = (float)xCoord(rGen);
+		r->pos.y = (float)yCoord(rGen);
+		world.AddObject(r);
+	}
+
 	// set a controller.
-	Input* CurrentInput = new RndInput();
+	Input* CurrentInput = new PlayerInput();
 	world.SetController(CurrentInput);
 
 	// Add player
@@ -41,7 +59,7 @@ int main()
 	p->pos = Vector2D(40, 27);
 	world.AddObject(p);
 
-	for (int i = 0; i < 100; i++)
+	while (true)
 	{
 		world.Update();
 
@@ -56,5 +74,11 @@ int main()
 
 		// Sleep a bit so updates don't run too fast
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		{
+			return EXIT_SUCCESS;
+		}
+
 	}
 }

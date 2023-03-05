@@ -35,6 +35,12 @@ Et la liste des objets à supprimer à la prochaine frame.
 	- ça n'a pas fonctionner du coup j'ai du mettre ```#pragma warning(disable : 4996)``` sur le fichier qui ne fonctionner pas.
 - Ajout de la destruction des Aliens avec le laser du player.
 	- J'aurais voulu avoir une fonction qui ne return que les aliens mais j'ais vite give up parce que il ne me renvoyait qu'un tableau vide.
+- Ajout de la class ARock
+	- Ajout de l'enum dans le render RS_Rock.
+	- Ajout de la collision entre le laser et le rock.
+	```
+	if(strcmp(CurrentObject->m_ObjectType, "Rock") == 0)
+	```
 
 #### Ajout de SFML
 - Succée j'arrivais pas parce que je m'étais projectDir et non pas solutionDir.

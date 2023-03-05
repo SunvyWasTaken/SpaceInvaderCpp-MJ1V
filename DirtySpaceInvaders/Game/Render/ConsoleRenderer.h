@@ -20,7 +20,8 @@ enum RaiderSprites
 	RS_BetterAlien = 'B',
 	RS_PlayerLaser = 0xBA,
 	RS_AlienLaser = '|',
-	RS_Explosion = '*'
+	RS_Explosion = '*',
+	RS_Rock = 'O'
 };
 
 class Renderer

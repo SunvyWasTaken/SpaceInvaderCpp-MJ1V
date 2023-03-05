@@ -1,5 +1,6 @@
 #include "Game/Render/ConsoleRenderer.h"
 #include "Game/Entity/Alien.h"
+#include "Game/Entity/Rock.h"
 #include "Game/Entity/PlayerShip.h"
 #include "Game/Engine/PlayField.h"
 #include <SFML/Window/Keyboard.hpp>
@@ -39,6 +40,14 @@ int main()
 		a->pos.x = (float)xCoord(rGen);
 		a->pos.y = (float)yCoord(rGen);
 		world.AddObject(a);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		ARock* r = new ARock();
+		r->pos.x = (float)xCoord(rGen);
+		r->pos.y = (float)yCoord(rGen);
+		world.AddObject(r);
 	}
 
 	// set a controller.

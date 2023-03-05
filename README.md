@@ -23,14 +23,18 @@ Et la liste des objets à supprimer à la prochaine frame.
 
 ## Treshold 1
 - Separation des class pour éviter que tous soit dans un seul fichier.
-- J'ai aussi rangé les fichiers pour éviter de mettre ```../``` sur certain de mes includes.
+	- J'ai aussi rangé les fichiers pour éviter de mettre ```../``` sur certain de mes includes.
+	- J'ai mis le controllerInput du PlayField en private et du coup ajout d'un Getter et un Setter.
 - J'ai notifier aussi que mes ennemies spawn tous sur la même ligne parce qu'on ne set pas leur Y mais que leurs X dans le Main.
 - J'ai du crée une fonction dans le PlayField qui récup le rGen que je définie dans le main pour ensuite pouvoir le récup dans le .cpp des inputs.
-- J'ai mis le controllerInput du PlayField en private et du coup ajout d'un Getter et un Setter.
 - J'ai déplacer le destroy des gameObject dans le parents pour évité de le refaire à chaque fois.
 - Les touches peuvent être changer dans le fichier PlayerBind.h
-- ça n'a pas fonctionner du coup j'ai du mettre ```#pragma warning(disable : 4996)``` sur le fichier qui ne fonctionner pas.
-	- ~Changement de ```strcpy``` en ```strcpy_s``` cause j'avais une error qui me disait que c'était "_unsafe_".~
+	- Je les ai mis en dur voilà
+	- J'ai mis aussi la touche échape pour sortir 
+- ~Changement de ```strcpy``` en ```strcpy_s``` cause j'avais une error qui me disait que c'était "_unsafe_".~
+	- ça n'a pas fonctionner du coup j'ai du mettre ```#pragma warning(disable : 4996)``` sur le fichier qui ne fonctionner pas.
+- Ajout de la destruction des Aliens avec le laser du player.
+	- J'aurais voulu avoir une fonction qui ne return que les aliens mais j'ais vite give up parce que il ne me renvoyait qu'un tableau vide.
 
 #### Ajout de SFML
 - Succée j'arrivais pas parce que je m'étais projectDir et non pas solutionDir.

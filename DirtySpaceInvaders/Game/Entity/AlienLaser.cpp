@@ -22,12 +22,15 @@ void AlienLaser::Update(PlayField& world)
 	}
 
 	GameObject* player = world.GetPlayerObject();
+	if (!player)
+	{
+		return;
+	}
 	if (pos.IntCmp(player->pos))
 	{
 		deleted = true;
 		world.RemoveObject(player);
 	}
-
 	if (deleted)
 	{
 		world.DespawnLaser(this);

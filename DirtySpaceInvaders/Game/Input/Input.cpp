@@ -23,15 +23,15 @@ bool RndInput::Fire()
 
 bool PlayerInput::Left()
 {
-	return sf::Keyboard::isKeyPressed(sf::Keyboard::Q);
+	return sf::Keyboard::isKeyPressed(LeftKey);
 }
 
 bool PlayerInput::Right()
 {
-	return sf::Keyboard::isKeyPressed(sf::Keyboard::D);
+	return sf::Keyboard::isKeyPressed(RightKey);
 }
 
 bool PlayerInput::Fire()
 {
-	return sf::Keyboard::isKeyPressed(sf::Keyboard::Space);
+	return sf::Keyboard::isKeyPressed(FireKey);
 }

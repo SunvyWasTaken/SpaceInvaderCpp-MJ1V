@@ -2,6 +2,7 @@
 #include "Game/Entity/Alien.h"
 #include "Game/Entity/PlayerShip.h"
 #include "Game/Engine/PlayField.h"
+#include <SFML/Window/Keyboard.hpp>
 
 #include <random>
 #include <thread>
@@ -64,5 +65,11 @@ int main()
 
 		// Sleep a bit so updates don't run too fast
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		{
+			return EXIT_SUCCESS;
+		}
+
 	}
 }

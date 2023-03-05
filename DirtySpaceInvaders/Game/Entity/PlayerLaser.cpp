@@ -16,6 +16,23 @@ void PlayerLaser::Update(PlayField& world)
 {
 	bool deleted = false;
 	pos.y -= 1.f;
+	const std::vector<GameObject*>& OtherObjects = world.GameObjects();
+	for (const auto& CurrentObject : OtherObjects)
+	{
+		if (!&CurrentObject)
+		{
+			continue;
+		}
+		if (strcmp(CurrentObject->m_objType, "AlienShip") == 0)
+		{
+			if (pos.IntCmp(CurrentObject->pos))
+			{
+				world.RemoveObject(CurrentObject);
+				deleted = true;
+				break;
+			}
+		}
+	}
 	if (pos.y < 0)
 	{
 		deleted = true;

@@ -36,7 +36,7 @@ public:
 
 	GameObject* GetPlayerObject();
 
-	void Draw(sf::RenderWindow& _windows);
+	const std::vector<GameObject*>& GetAllOtherObject() const;
 
 #pragma region Controller Input
 

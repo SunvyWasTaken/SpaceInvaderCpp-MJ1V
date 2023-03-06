@@ -33,7 +33,7 @@ int main()
 	intRand yCoord(0, 10);
 
 	// Populate aliens
-	for (int k = 0; k < 20; k++)
+	for (int k = 0; k < NBRAALIEN; k++)
 	{
 		Alien* a = new Alien();
 		a->pos.x = (float)xCoord(rGen);

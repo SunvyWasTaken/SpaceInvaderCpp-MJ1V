@@ -3,7 +3,13 @@
 #include "Game/Entity/GameObject.h"
 
 PlayField::PlayField(Vector2D iBounds) : bounds(iBounds), controllerInput(nullptr)
-{}
+{
+#include "Game/GameStat.h"
+	AlienLasers = NBRALIENLASER;
+	PlayerLasers = NBRPLAYERLASER;
+#include "Game/UndefAllStat.h"
+
+}
 
 void PlayField::Update()
 {

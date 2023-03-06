@@ -8,9 +8,9 @@ public:
 
 private:
 	float health;
-	float energy = 0.f;
-	float direction = 1.f;
-	float velocity = 0.5f;
+	float energy;
+	float direction;
+	float velocity;
 
 	bool DecreaseHealth() { health -= 1.f; return health <= 0; }
 

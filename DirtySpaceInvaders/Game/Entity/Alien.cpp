@@ -2,7 +2,6 @@
 #include "Game/Engine/PlayField.h"
 #include "AlienLaser.h"
 #include "Game/Render/ConsoleRenderer.h"
-#include "Game/GameStat.h"
 
 #include <random>
 #include <string>
@@ -11,13 +10,18 @@ typedef std::uniform_real_distribution<float> floatRand;
 
 Alien::Alien()
 {
+#include "Game/GameStat.h"
 	health = AALIENHEALTH;
+	energy = AALIENENERGY;
+	direction = AALIENDIRECTION;
+	velocity = AALIENVELOCITY;
+#include "Game/UndefAllStat.h"
+
 	m_objType = new char[64];
 	strcpy(m_objType, "AlienShip");
 	sprite = RS_Alien;
 }
 
-#include "Game/UndefAllStat.h"
 
 void Alien::Update(PlayField& world)
 {

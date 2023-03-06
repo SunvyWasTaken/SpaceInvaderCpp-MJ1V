@@ -2,11 +2,10 @@
 #include "PlayerLaser.h"
 #include "Game/Engine/PlayField.h"
 #include "Game/Render/ConsoleRenderer.h"
-#pragma warning(disable : 4996)
 
 #include <string>
 
-PlayerShip::PlayerShip()
+PlayerShip::PlayerShip() : Health(0)
 {
 	m_objType = new char[64];
 	strcpy(m_objType, "PlayerShip");
@@ -27,4 +26,10 @@ void PlayerShip::Update(PlayField& world)
 		newLaser->pos = pos;
 		world.SpawnLaser(newLaser);
 	}
+}
+
+bool PlayerShip::DecreaseHealth()
+{
+	
+	return true;
 }

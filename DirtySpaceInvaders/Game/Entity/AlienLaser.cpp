@@ -1,7 +1,6 @@
 #include "AlienLaser.h"
 #include "Game/Engine/PlayField.h"
 #include "Game/Render/ConsoleRenderer.h"
-#pragma warning(disable : 4996)
 
 #include <string>
 
@@ -40,7 +39,7 @@ void AlienLaser::Update(PlayField& world)
 	if (pos.IntCmp(player->pos))
 	{
 		deleted = true;
-		world.RemoveObject(player);
+		player->DecreaseHealth();
 	}
 	if (deleted)
 	{

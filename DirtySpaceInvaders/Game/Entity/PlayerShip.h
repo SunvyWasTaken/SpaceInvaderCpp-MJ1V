@@ -7,4 +7,8 @@ public:
 	PlayerShip();
 
 	void Update(PlayField& world);
+
+	unsigned Health;
+
+	bool DecreaseHealth() override;
 };

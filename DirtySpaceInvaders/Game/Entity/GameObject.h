@@ -13,5 +13,5 @@ public:
 
 	bool IsType(const char* type);
 	virtual void Update(PlayField& world) = 0;
-	bool DecreaseHealth() { return true; };
+	virtual bool DecreaseHealth() { return true; };
 };

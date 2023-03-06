@@ -38,6 +38,7 @@ Et la liste des objets à supprimer à la prochaine frame.
 - Ajout d'un exit lorsque le player  meurt. parce que.
 - Lock player en world bound.
 - Utilisation des macro pour set les stats un peu partout.
+	- J'imagine que c'est pas ouf d'utiliser des macro pour ça mais... oui pardon
 	- Les datas peuvent être modifier dans le fichier `GameStat.h`
 	- Du coup j'utilise un `#include "Game/GameStat.h"` pour avoir toutes mes variables après je les undef avec mon `#include "Game/UndefAllStat.h"`
 - Ajout de la destruction des Aliens avec le laser du player.

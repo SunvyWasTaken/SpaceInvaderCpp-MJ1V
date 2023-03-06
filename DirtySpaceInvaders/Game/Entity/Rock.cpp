@@ -1,6 +1,5 @@
 #include "Rock.h"
 #include "Game/Render/ConsoleRenderer.h"
-#pragma warning(disable : 4996)
 
 #include <string>
 

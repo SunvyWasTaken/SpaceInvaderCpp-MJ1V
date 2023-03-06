@@ -2,9 +2,6 @@
 #include "Game/Engine/PlayField.h"
 #include "AlienLaser.h"
 #include "Game/Render/ConsoleRenderer.h"
-#pragma warning(disable : 4996)
-
-
 
 #include <random>
 #include <string>

@@ -33,7 +33,7 @@ Et la liste des objets à supprimer à la prochaine frame.
 	- Je les ai mis en dur voilà
 	- J'ai mis aussi la touche échape pour sortir 
 - ~Changement de `strcpy` en `strcpy_s` cause j'avais une error qui me disait que c'était "_unsafe_".~
-	- ~ça n'a pas fonctionner du coup j'ai du mettre ```#pragma warning(disable : 4996)``` sur le fichier qui ne fonctionner pas.~
+	- ~ça n'a pas fonctionner du coup j'ai du mettre `#pragma warning(disable : 4996)` sur le fichier qui ne fonctionner pas.~
 		- Ok c'est parce que j'avais changer la norme du language en 20 et lorsque je le remet à 14 ça passe.
 - Ajout d'un exit lorsque le player  meurt. parce que.
 - Lock player en world bound.

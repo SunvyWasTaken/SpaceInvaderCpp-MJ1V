@@ -152,6 +152,7 @@
     <ClInclude Include="Game\Engine\Vector.h" />
     <ClInclude Include="Game\Entity\Alien.h" />
     <ClInclude Include="Game\Entity\AlienLaser.h" />
+    <ClInclude Include="Game\Entity\AlienStonk.h" />
     <ClInclude Include="Game\Entity\GameObject.h" />
     <ClInclude Include="Game\Entity\PlayerLaser.h" />
     <ClInclude Include="Game\Entity\PlayerShip.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="Game\Engine\PlayField.cpp" />
     <ClCompile Include="Game\Entity\Alien.cpp" />
     <ClCompile Include="Game\Entity\AlienLaser.cpp" />
+    <ClCompile Include="Game\Entity\AlienStonk.cpp" />
     <ClCompile Include="Game\Entity\GameObject.cpp" />
     <ClCompile Include="Game\Entity\PlayerLaser.cpp" />
     <ClCompile Include="Game\Entity\PlayerShip.cpp" />

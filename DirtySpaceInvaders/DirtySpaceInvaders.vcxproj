@@ -156,9 +156,11 @@
     <ClInclude Include="Game\Entity\PlayerLaser.h" />
     <ClInclude Include="Game\Entity\PlayerShip.h" />
     <ClInclude Include="Game\Entity\Rock.h" />
+    <ClInclude Include="Game\GameStat.h" />
     <ClInclude Include="Game\Input\Input.h" />
     <ClInclude Include="Game\Input\PlayerBind.h" />
     <ClInclude Include="Game\Render\ConsoleRenderer.h" />
+    <ClInclude Include="Game\UndefAllStat.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game\Engine\PlayField.cpp" />

@@ -1,0 +1,10 @@
+#pragma once
+#undef WORLDBOUND
+
+#undef PLAYERSPAWN
+
+#undef PLAYERHEALTH
+
+#undef AALIENHEALTH
+
+#undef BALIENHEALTH

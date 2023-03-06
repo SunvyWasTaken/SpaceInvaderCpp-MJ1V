@@ -39,7 +39,10 @@ void AlienLaser::Update(PlayField& world)
 	if (pos.IntCmp(player->pos))
 	{
 		deleted = true;
-		player->DecreaseHealth();
+		if (player->DecreaseHealth())
+		{
+			world.RemoveObject(player);
+		}
 	}
 	if (deleted)
 	{

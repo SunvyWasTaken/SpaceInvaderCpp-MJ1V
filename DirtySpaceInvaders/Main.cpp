@@ -4,12 +4,12 @@
 #include "Game/Entity/PlayerShip.h"
 #include "Game/Engine/PlayField.h"
 #include <SFML/Window/Keyboard.hpp>
+#include "Game/GameStat.h"
 
 #include <random>
 #include <thread>
 #include <memory>
 #include <string>
-
 
 
 typedef std::uniform_int_distribution<int> intRand;
@@ -25,12 +25,11 @@ std::default_random_engine* GetrGen()
 int main()
 {
 	rGen.seed(1);
+	Vector2D WorldBound = WORLDBOUND;
+	Renderer consoleRenderer(WorldBound);
+	PlayField world(WorldBound);
 
-	Vector2D size(80, 28);
-	Renderer consoleRenderer(size);
-	PlayField world(size);
-
-	intRand xCoord(0, (int)size.x- 1);
+	intRand xCoord(0, (int)WorldBound.x- 1);
 	intRand yCoord(0, 10);
 
 	// Populate aliens
@@ -57,8 +56,10 @@ int main()
 
 	// Add player
 	PlayerShip* p = new PlayerShip();
-	p->pos = Vector2D(40, 27);
+	Vector2D PlayerSpawn = PLAYERSPAWN;
+	p->pos = PlayerSpawn;
 	world.AddObject(p);
+#include "Game/UndefAllStat.h"
 
 	while (true)
 	{

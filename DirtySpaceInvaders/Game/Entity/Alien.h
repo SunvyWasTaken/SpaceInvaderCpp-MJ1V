@@ -7,7 +7,7 @@ public:
 	Alien();
 
 private:
-	float health = 1.f;
+	float health;
 	float energy = 0.f;
 	float direction = 1.f;
 	float velocity = 0.5f;

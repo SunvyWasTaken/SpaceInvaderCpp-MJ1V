@@ -8,7 +8,9 @@ public:
 
 	void Update(PlayField& world);
 
-	unsigned Health;
-
 	bool DecreaseHealth() override;
+
+private:
+
+	unsigned Health;
 };

@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "Game\Engine\Vector.h"
+#include "RenderMgr.h"
 
 struct RenderItem
 {
@@ -24,7 +24,7 @@ enum RaiderSprites
 	RS_Rock = 'O'
 };
 
-class Renderer
+class Renderer : public RenderMgr
 {
 public:
 	Renderer(const Vector2D& bounds);
@@ -32,6 +32,8 @@ public:
 
 	// Draws all game objects after clearing filling the Canvas with _ symbol
 	void Update(const RenderItemList& renderList);
+
+	void Update();
 
 private:
 	Vector2D renderBounds;
@@ -48,6 +50,6 @@ private:
 	void FillCanvas(unsigned char sprite);
 
 	// Prints canvas char array on console
-	void DrawCanvas();
+	void Draw() override;
 };
 

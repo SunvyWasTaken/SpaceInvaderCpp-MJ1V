@@ -1,8 +1,12 @@
 #include <vector>
 #include <iostream>
 #include "ConsoleRenderer.h"
+#include "Game/Engine/PlayField.h"
+#include "Game/Entity/GameObject.h"
 
 #include <Windows.h>
+#include <thread>
+#include <SFML/Window/Keyboard.hpp>
 
 void setCursorPosition(int x, int y)
 {
@@ -13,7 +17,7 @@ void setCursorPosition(int x, int y)
 }
 
 Renderer::Renderer(const Vector2D& bounds)
-	: renderBounds(bounds)
+	: RenderMgr(bounds), renderBounds(bounds)
 {
 	canvasSize = (int)(bounds.x * bounds.y);
 	disp[0].canvas = new unsigned char[canvasSize];
@@ -42,7 +46,26 @@ void Renderer::Update(const RenderItemList& RenderList)
 		}
 	}
 
-	DrawCanvas();
+	Draw();
+}
+
+void Renderer::Update()
+{
+	RenderItemList rl;
+	for (auto* it : GetWorld()->GameObjects())
+	{
+		RenderItem a = RenderItem(Vector2D(it->pos), it->sprite);
+		rl.push_back(a);
+	}
+
+	Update(rl);
+
+	// Sleep a bit so updates don't run too fast
+	std::this_thread::sleep_for(std::chrono::milliseconds(1));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) || !GetWorld()->GetPlayerObject())
+	{
+		exit(0);
+	}
 }
 
 void Renderer::FillCanvas(unsigned char sprite)
@@ -53,7 +76,7 @@ void Renderer::FillCanvas(unsigned char sprite)
 	}
 }
 
-void Renderer::DrawCanvas()
+void Renderer::Draw()
 {
 	for (int y = 0; y < renderBounds.y; y++)
 	{

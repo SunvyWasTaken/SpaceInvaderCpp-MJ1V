@@ -61,3 +61,5 @@ public:
 };
 
 std::default_random_engine* GetrGen();
+
+PlayField* GetWorld();

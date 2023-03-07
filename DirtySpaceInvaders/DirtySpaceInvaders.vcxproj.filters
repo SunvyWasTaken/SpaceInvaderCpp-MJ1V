@@ -81,6 +81,9 @@
     <ClInclude Include="Game\Entity\AlienStonk.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Render\RenderMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -115,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="Game\Entity\AlienStonk.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Render\RenderMgr.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

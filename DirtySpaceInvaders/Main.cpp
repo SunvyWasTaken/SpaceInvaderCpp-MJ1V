@@ -28,6 +28,13 @@ std::default_random_engine* GetrGen()
 	return &rGen;
 }
 
+PlayField* world;
+
+PlayField* GetWorld()
+{
+	return world;
+}
+
 int main()
 {
 	rGen.seed(1);
@@ -35,23 +42,22 @@ int main()
 	sf::RenderWindow* pWindows = new sf::RenderWindow(sf::VideoMode(1280,720), "NOT Space vader");
 
 	// Pour L'audio.
-	sf::SoundBuffer buffer;
-	if (!buffer.loadFromFile("Ressources/Megalovania.wav"))
+	sf::Music music;
+	if (!music.openFromFile("Ressources/Megalovania.wav"))
 	{
-		std::cout << "Error Load File\n";
+		std::cout << "Didn't work\n";
 	}
 	else
 	{
-		sf::Sound sound;
-		sound.setBuffer(buffer);
-		sound.setLoop(true);
-		sound.play();
+		music.setVolume(20);
+		music.setLoop(true);
+		music.play();
 	}
 	
 
 	Vector2D WorldBound = WORLDBOUND;
 	Renderer consoleRenderer(WorldBound);
-	PlayField world(WorldBound);
+	world = new PlayField(WorldBound);
 
 	intRand xCoord(0, (int)WorldBound.x- 1);
 	intRand yCoord(0, 10);
@@ -62,7 +68,7 @@ int main()
 		Alien* a = new Alien();
 		a->pos.x = (float)xCoord(rGen);
 		a->pos.y = (float)yCoord(rGen);
-		world.AddObject(a);
+		world->AddObject(a);
 	}
 
 	// ajour des roches
@@ -71,38 +77,24 @@ int main()
 		ARock* r = new ARock();
 		r->pos.x = (float)xCoord(rGen);
 		r->pos.y = (float)yCoord(rGen);
-		world.AddObject(r);
+		world->AddObject(r);
 	}
 
 	// set a controller.
 	Input* CurrentInput = new PlayerInput();
-	world.SetController(CurrentInput);
+	world->SetController(CurrentInput);
 
 	// Add player
 	PlayerShip* p = new PlayerShip();
 	Vector2D PlayerSpawn = PLAYERSPAWN;
 	p->pos = PlayerSpawn;
-	world.AddObject(p);
+	world->AddObject(p);
 #include "Game/UndefAllStat.h"
 
 	while (true)
 	{
-		world.Update();
+		world->Update();
 
-		RenderItemList rl;
-		for (auto it : world.GameObjects())
-		{
-			RenderItem a = RenderItem(Vector2D(it->pos), it->sprite);
-			rl.push_back(a);
-		}
-
-		consoleRenderer.Update(rl);
-
-		// Sleep a bit so updates don't run too fast
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) || !world.GetPlayerObject())
-		{
-			exit(0);
-		}
+		consoleRenderer.Update();
 	}
 }

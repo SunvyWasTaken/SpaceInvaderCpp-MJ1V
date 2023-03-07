@@ -3,13 +3,19 @@
 #include "Game/Entity/Rock.h"
 #include "Game/Entity/PlayerShip.h"
 #include "Game/Engine/PlayField.h"
-#include <SFML/Window/Keyboard.hpp>
 #include "Game/GameStat.h"
+
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
+#include <iostream>
 
 #include <random>
 #include <thread>
 #include <memory>
 #include <string>
+
 
 
 typedef std::uniform_int_distribution<int> intRand;
@@ -25,6 +31,24 @@ std::default_random_engine* GetrGen()
 int main()
 {
 	rGen.seed(1);
+
+	sf::RenderWindow* pWindows = new sf::RenderWindow(sf::VideoMode(1280,720), "NOT Space vader");
+
+	// Pour L'audio.
+	sf::SoundBuffer buffer;
+	if (!buffer.loadFromFile("Ressources/Megalovania.wav"))
+	{
+		std::cout << "Error Load File\n";
+	}
+	else
+	{
+		sf::Sound sound;
+		sound.setBuffer(buffer);
+		sound.setLoop(true);
+		sound.play();
+	}
+	
+
 	Vector2D WorldBound = WORLDBOUND;
 	Renderer consoleRenderer(WorldBound);
 	PlayField world(WorldBound);

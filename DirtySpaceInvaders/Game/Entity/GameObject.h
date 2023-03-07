@@ -9,7 +9,7 @@ public:
 	~GameObject();
 	char* m_objType = nullptr;
 	Vector2D pos;
-	unsigned char sprite = '\0';
+	enum ERaiderSprites sprite;
 
 	bool IsType(const char* type);
 	virtual void Update(PlayField& world) = 0;

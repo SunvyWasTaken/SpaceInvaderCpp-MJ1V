@@ -33,7 +33,8 @@ Renderer::~Renderer()
 
 void Renderer::Update(const RenderItemList& RenderList)
 {
-	FillCanvas(RS_BackgroundTile);
+	ERaiderSprites background = ERaiderSprites::RS_BackgroundTile;
+	FillCanvas(GetSprite(background));
 
 	for (auto ri : RenderList)
 	{
@@ -45,16 +46,15 @@ void Renderer::Update(const RenderItemList& RenderList)
 			*CurCanvas((int)ri.pos.x, +(int)ri.pos.y) = ri.sprite;
 		}
 	}
-
-	Draw();
 }
 
 void Renderer::Update()
 {
 	RenderItemList rl;
+	// change to character
 	for (auto* it : GetWorld()->GameObjects())
 	{
-		RenderItem a = RenderItem(Vector2D(it->pos), it->sprite);
+		RenderItem a = RenderItem(Vector2D(it->pos), GetSprite(it->sprite));
 		rl.push_back(a);
 	}
 
@@ -66,6 +66,40 @@ void Renderer::Update()
 	{
 		exit(0);
 	}
+}
+
+unsigned Renderer::GetSprite(ERaiderSprites& _sprite)
+{
+	switch (_sprite)
+	{
+	case RS_BackgroundTile:
+		return ' ';
+		break;
+	case RS_Player:
+		return 'P';
+		break;
+	case RS_Alien:
+		return 'A';
+		break;
+	case RS_BetterAlien:
+		return 'B';
+		break;
+	case RS_PlayerLaser:
+		return 0xBA;
+		break;
+	case RS_AlienLaser:
+		return '|';
+		break;
+	case RS_Explosion:
+		return '*';
+		break;
+	case RS_Rock:
+		return 'O';
+		break;
+	default:
+		break;
+	}
+	return 0;
 }
 
 void Renderer::FillCanvas(unsigned char sprite)

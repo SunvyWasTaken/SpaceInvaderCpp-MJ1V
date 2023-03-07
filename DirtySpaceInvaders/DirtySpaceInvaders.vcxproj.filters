@@ -81,7 +81,13 @@
     <ClInclude Include="Game\Entity\AlienStonk.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Engine\ERaiderSprites.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
     <ClInclude Include="Game\Render\RenderMgr.h">
+      <Filter>Header Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Render\RenderSFML.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -120,7 +126,10 @@
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Game\Render\RenderMgr.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Render\RenderSFML.cpp">
+      <Filter>Source Files\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

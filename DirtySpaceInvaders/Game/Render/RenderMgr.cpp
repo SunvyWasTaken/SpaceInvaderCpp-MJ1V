@@ -2,6 +2,7 @@
 
 RenderMgr::RenderMgr(const Vector2D& _size)
 {
+	isOpen = true;
 }
 
 RenderMgr::~RenderMgr()

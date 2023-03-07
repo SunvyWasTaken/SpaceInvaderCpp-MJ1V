@@ -1,4 +1,3 @@
-#include "Game/Render/ConsoleRenderer.h"
 #include "Game/Entity/Alien.h"
 #include "Game/Entity/Rock.h"
 #include "Game/Entity/PlayerShip.h"
@@ -17,6 +16,13 @@
 #include <string>
 
 
+#define SFMLRENDER true
+
+#if SFMLRENDER
+	#include "Game/Render/RenderSFML.h"
+#else
+	#include "Game/Render/ConsoleRenderer.h"
+#endif
 
 typedef std::uniform_int_distribution<int> intRand;
 typedef std::uniform_real_distribution<float> floatRand;
@@ -39,8 +45,6 @@ int main()
 {
 	rGen.seed(1);
 
-	sf::RenderWindow* pWindows = new sf::RenderWindow(sf::VideoMode(1280,720), "NOT Space vader");
-
 	// Pour L'audio.
 	sf::Music music;
 	if (!music.openFromFile("Ressources/Megalovania.wav"))
@@ -54,9 +58,15 @@ int main()
 		music.play();
 	}
 	
-
 	Vector2D WorldBound = WORLDBOUND;
-	Renderer consoleRenderer(WorldBound);
+	#if SFMLRENDER
+	RenderSFML RenderManager(WorldBound);
+	RenderManager.Init();
+	#else
+	Renderer RenderManager(WorldBound);
+	#endif
+	#undef SFMLRENDER
+
 	world = new PlayField(WorldBound);
 
 	intRand xCoord(0, (int)WorldBound.x- 1);
@@ -91,10 +101,11 @@ int main()
 	world->AddObject(p);
 #include "Game/UndefAllStat.h"
 
-	while (true)
+	while (RenderManager.isOpen)
 	{
 		world->Update();
 
-		consoleRenderer.Update();
+		RenderManager.Update();
+		RenderManager.Draw();
 	}
 }

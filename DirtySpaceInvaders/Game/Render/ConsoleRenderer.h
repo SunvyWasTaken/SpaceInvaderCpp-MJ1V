@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "RenderMgr.h"
+#include "Game/Engine/ERaiderSprites.h"
 
 struct RenderItem
 {
@@ -11,18 +12,6 @@ struct RenderItem
 	char sprite;
 };
 typedef std::vector<RenderItem> RenderItemList;
-
-enum RaiderSprites
-{
-	RS_BackgroundTile = ' ',
-	RS_Player = 'P',
-	RS_Alien = 'A',
-	RS_BetterAlien = 'B',
-	RS_PlayerLaser = 0xBA,
-	RS_AlienLaser = '|',
-	RS_Explosion = '*',
-	RS_Rock = 'O'
-};
 
 class Renderer : public RenderMgr
 {
@@ -33,9 +22,14 @@ public:
 	// Draws all game objects after clearing filling the Canvas with _ symbol
 	void Update(const RenderItemList& renderList);
 
-	void Update();
+	void Update() override;
+
+	void Draw() override;
 
 private:
+
+	unsigned GetSprite(ERaiderSprites& _sprite);
+
 	Vector2D renderBounds;
 	int curIdx = 0;
 	struct
@@ -49,7 +43,5 @@ private:
 	// Fills whole canvas array with sprite
 	void FillCanvas(unsigned char sprite);
 
-	// Prints canvas char array on console
-	void Draw() override;
 };
 

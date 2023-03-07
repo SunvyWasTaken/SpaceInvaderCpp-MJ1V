@@ -7,6 +7,8 @@ public:
 
 	RenderMgr(const Vector2D& _size);
 	~RenderMgr();
+
+	bool isOpen;
 	
 	virtual void Update() = 0;
 

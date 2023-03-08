@@ -1,21 +1,23 @@
 #pragma once
 
 // Size du world
-#define WORLDBOUND Vector2D {80, 28};
+#define WORLDBOUND Vector2D {160, 90};
 
 // Coord du spawn du player à faire attention qu'elle soit compris dans les bordure du world
-#define PLAYERSPAWN Vector2D {40,27};
+#define PLAYERSPAWN Vector2D {160/2,90-5};
 
 // Nombre d'alien A dans le niveau
-#define NBRAALIEN 20
+#define NBRAALIEN 300
 
 // Nombre d'alien B qui spawn dans le niveau
 #define NBRBALIEN 10
 
 #define PLAYERHEALTH 2
-#define NBRPLAYERLASER 4
+#define NBRPLAYERLASER 50
 
-#define NBRALIENLASER 10
+#define NBRROCK 200
+
+#define NBRALIENLASER 150
 
 // Data de l'alien A
 #define AALIENHEALTH 1

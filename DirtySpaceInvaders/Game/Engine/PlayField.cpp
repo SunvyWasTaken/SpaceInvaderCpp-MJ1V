@@ -80,6 +80,11 @@ void PlayField::AddObject(GameObject* newObj)
 
 void PlayField::RemoveObject(GameObject* newObj)
 {
+	// Check si le player meur. SALE
+	if (newObj->IsType("PlayerShip"))
+	{
+		exit(0);
+	}
 	auto it = std::find(ObjectsToDestroy.begin(), ObjectsToDestroy.end(), newObj);
 	if (it != ObjectsToDestroy.end())
 	{

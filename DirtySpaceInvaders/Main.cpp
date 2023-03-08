@@ -70,7 +70,7 @@ int main()
 	world = new PlayField(WorldBound);
 
 	intRand xCoord(0, (int)WorldBound.x- 1);
-	intRand yCoord(0, 10);
+	intRand yCoord(0, (int)WorldBound.y / 2);
 
 	// Populate aliens
 	for (int k = 0; k < NBRAALIEN; k++)
@@ -82,7 +82,7 @@ int main()
 	}
 
 	// ajour des roches
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < NBRROCK; i++)
 	{
 		ARock* r = new ARock();
 		r->pos.x = (float)xCoord(rGen);

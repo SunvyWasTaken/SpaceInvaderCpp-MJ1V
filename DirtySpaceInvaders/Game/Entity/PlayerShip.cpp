@@ -13,6 +13,11 @@ PlayerShip::PlayerShip() : Health(PLAYERHEALTH)
 	sprite = RS_Player;
 }
 
+PlayerShip::~PlayerShip()
+{
+	exit(0);
+}
+
 #include "Game/UndefAllStat.h"
 
 void PlayerShip::Update(PlayField& world)

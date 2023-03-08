@@ -3,6 +3,8 @@
 
 #undef PLAYERSPAWN
 
+#undef FRAMERATE
+
 #undef NBRALIEN
 
 #undef PLAYERHEALTH

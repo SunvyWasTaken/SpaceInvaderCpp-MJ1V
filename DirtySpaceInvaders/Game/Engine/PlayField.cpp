@@ -8,6 +8,9 @@
 
 #include <thread>
 #include <functional>
+#include <mutex>
+
+std::mutex Mutex;
 
 PlayField::PlayField(Vector2D iBounds) : bounds(iBounds), controllerInput(nullptr)
 {
@@ -20,7 +23,7 @@ PlayField::PlayField(Vector2D iBounds) : bounds(iBounds), controllerInput(nullpt
 
 void PlayField::Init()
 {
-	std::thread t1(&PlayField::SpawnAlien<Alien>, GetWorld());
+	SpawnAlien<Alien>();
 
 	SpawnRock();
 	SpawnPlayer();
@@ -51,11 +54,11 @@ void PlayField::Update()
 	}
 	if (!IsShipLeft("AlienShip"))
 	{
-		std::thread t1(&PlayField::SpawnAlien<Alien>, GetWorld());
+		SpawnAlien<AlienStonk>();
 	}
 
 	// Sleep a bit so updates don't run too fast
-	std::this_thread::sleep_for(std::chrono::milliseconds(30));
+	std::this_thread::sleep_for(std::chrono::milliseconds(100/FRAMERATE));
 }
 
 GameObject* PlayField::GetPlayerObject()
@@ -98,7 +101,9 @@ void PlayField::DespawnLaser(GameObject* newObj)
 
 void PlayField::AddObject(GameObject* newObj)
 {
+	Mutex.lock();
 	ObjectToAdd.push_back(newObj);
+	Mutex.unlock();
 }
 
 void PlayField::RemoveObject(GameObject* newObj)
@@ -151,12 +156,11 @@ void PlayField::SpawnRock()
 template <class T>
 void PlayField::SpawnAlien()
 {
-	std::this_thread::sleep_for(std::chrono::seconds(2));
 	if (std::is_base_of<Alien, T>::value)
 	{
 		for (int k = 0; k < NBRALIEN; k++)
 		{
-			Alien* a = new Alien();
+			Alien* a = new T();
 			a->pos.x = (float)xCoord(*GetrGen());
 			a->pos.y = (float)yCoord(*GetrGen());
 			GetWorld()->AddObject(a);

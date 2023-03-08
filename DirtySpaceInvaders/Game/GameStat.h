@@ -7,6 +7,8 @@
 // Coord du spawn du player à faire attention qu'elle soit compris dans les bordure du world
 #define PLAYERSPAWN Vector2D {80/2, 40-5};
 
+#define FRAMERATE 60
+
 // Nombre d'alien dans le niveau
 #define NBRALIEN 2
 

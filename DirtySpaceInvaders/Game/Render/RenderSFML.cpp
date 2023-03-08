@@ -21,7 +21,9 @@ RenderSFML::~RenderSFML()
 void RenderSFML::Init()
 {
 	pWindow = new sf::RenderWindow(sf::VideoMode(1280,720), "NOT Space vader");
-	pWindow->setFramerateLimit(60);
+	#include "Game/GameStat.h"
+	pWindow->setFramerateLimit(FRAMERATE);
+	#include "Game/UndefAllStat.h"
 	sf::Vector2f RectSize = sf::Vector2f(1280/Size.x, 720/ Size.y);
 	Tampax = new sf::RectangleShape(sf::Vector2f(RectSize));
 }

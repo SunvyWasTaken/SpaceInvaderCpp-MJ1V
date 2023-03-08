@@ -6,7 +6,7 @@ class Alien : public GameObject
 public:
 	Alien();
 
-private:
+protected:
 	float health;
 	float energy;
 	float direction;
@@ -15,4 +15,9 @@ private:
 	bool DecreaseHealth() { health -= 1.f; return health <= 0; }
 
 	void Update(PlayField& world);
+
+private:
+
+	void CollideForward();
+
 };

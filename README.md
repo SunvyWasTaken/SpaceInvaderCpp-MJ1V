@@ -81,7 +81,9 @@ Et la liste des objets à supprimer à la prochaine frame.
 
 - J'ai déplacer les differents Spawn dans le playfield.
 
-- J'ai voulu ajouter un thread pour spawn les aliens en differer mais j'avais une erreur ![image error](/ImgREADME/ThreadError.jpg)
+- J'ai voulu ajouter un thread pour spawn les aliens en differer mais j'avais une erreur
+	`std::thread t1(&PlayField::SpawnAlien<Alien>, GetWorld());`
+![image error](/ImgREADME/ThreadError.jpg)
 
 #### Ajout de SFML
 - Succée j'arrivais pas parce que je m'étais projectDir et non pas solutionDir.

@@ -1,4 +1,7 @@
 #pragma once
+
+#undef WORLDSEED
+
 #undef WORLDBOUND
 
 #undef PLAYERSPAWN

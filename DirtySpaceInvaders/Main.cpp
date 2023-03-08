@@ -33,16 +33,23 @@ std::default_random_engine* GetrGen()
 	return &rGen;
 }
 
-PlayField* world;
+PlayField* world = nullptr;
 
 PlayField* GetWorld()
 {
 	return world;
 }
 
+RenderMgr* RenderManager = nullptr;
+
+RenderMgr* GetRender()
+{
+	return RenderManager;
+}
+
 int main()
 {
-	rGen.seed(1);
+	rGen.seed(WORLDSEED);
 
 	// Pour L'audio.
 	sf::Music music;
@@ -59,10 +66,10 @@ int main()
 	
 	Vector2D WorldBound = WORLDBOUND;
 	#if SFMLRENDER
-	RenderSFML RenderManager(WorldBound);
-	RenderManager.Init();
+	RenderManager = new RenderSFML(WorldBound);
+	RenderManager->Init();
 	#else
-	ConsoleRenderer RenderManager(WorldBound);
+	RenderManager = new ConsoleRenderer(WorldBound);
 	#endif
 	#undef SFMLRENDER
 
@@ -72,11 +79,11 @@ int main()
 
 #include "Game/UndefAllStat.h"
 
-	while (RenderManager.isOpen)
+	while (RenderManager->isOpen)
 	{
 		world->Update();
 
-		RenderManager.Update();
-		RenderManager.Draw();
+		RenderManager->Update();
+		RenderManager->Draw();
 	}
 }

@@ -8,9 +8,6 @@
 
 #include <thread>
 #include <functional>
-#include <mutex>
-
-std::mutex Mutex;
 
 PlayField::PlayField(Vector2D iBounds) : bounds(iBounds), controllerInput(nullptr)
 {
@@ -101,9 +98,7 @@ void PlayField::DespawnLaser(GameObject* newObj)
 
 void PlayField::AddObject(GameObject* newObj)
 {
-	Mutex.lock();
 	ObjectToAdd.push_back(newObj);
-	Mutex.unlock();
 }
 
 void PlayField::RemoveObject(GameObject* newObj)
@@ -111,7 +106,7 @@ void PlayField::RemoveObject(GameObject* newObj)
 	// Check si le player meur. SALE
 	if (newObj->IsType("PlayerShip"))
 	{
-		exit(0);
+		QuitGame();
 	}
 	auto it = std::find(ObjectsToDestroy.begin(), ObjectsToDestroy.end(), newObj);
 	if (it != ObjectsToDestroy.end())
@@ -151,6 +146,24 @@ void PlayField::SpawnRock()
 		r->pos.y = (float)yCoord(*GetrGen());
 		GetWorld()->AddObject(r);
 	}
+}
+
+void PlayField::QuitGame()
+{
+	for (auto* curEntity : ObjectToAdd)
+	{
+		delete curEntity;
+	}	
+	for (auto* curEntity : ObjectsToDestroy)
+	{
+		delete curEntity;
+	}
+	for (auto* curEntity : gameObjects)
+	{
+		delete curEntity;
+	}
+	delete GetRender();
+	exit(0);
 }
 
 template <class T>

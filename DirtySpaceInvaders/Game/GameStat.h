@@ -1,5 +1,7 @@
 #pragma once
 
+#define WORLDSEED 50
+
 // Size du world
 // Peut être casser si le world bound est trop grand dans le render console
 #define WORLDBOUND Vector2D {80, 40};
@@ -10,7 +12,7 @@
 #define FRAMERATE 60
 
 // Nombre d'alien dans le niveau
-#define NBRALIEN 2
+#define NBRALIEN 60
 
 // Nombre de point de vie du player
 #define PLAYERHEALTH 2
@@ -19,7 +21,7 @@
 #define NBRPLAYERLASER 5
 
 // Nombre de Roche dans le monde
-#define NBRROCK 150
+#define NBRROCK 50
 
 // Nombre de laser Alien max
 #define NBRALIENLASER 10

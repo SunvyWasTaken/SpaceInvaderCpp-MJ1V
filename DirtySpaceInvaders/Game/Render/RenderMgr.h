@@ -6,9 +6,11 @@ class RenderMgr
 public:
 
 	RenderMgr(const Vector2D& _size);
-	~RenderMgr();
+	virtual ~RenderMgr() = default;
 
 	bool isOpen;
+
+	virtual void Init() = 0;
 	
 	virtual void Update() = 0;
 

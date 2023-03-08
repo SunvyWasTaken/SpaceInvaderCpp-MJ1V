@@ -70,6 +70,8 @@ public:
 
 	bool IsShipLeft(const char* _Name);
 
+	void QuitGame();
+
 
 protected:
 
@@ -85,4 +87,6 @@ protected:
 std::default_random_engine* GetrGen();
 
 PlayField* GetWorld();
+
+class RenderMgr* GetRender();
 

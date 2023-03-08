@@ -117,3 +117,7 @@ void ConsoleRenderer::Draw()
 	curIdx++;
 }
 
+void ConsoleRenderer::Init()
+{
+}
+

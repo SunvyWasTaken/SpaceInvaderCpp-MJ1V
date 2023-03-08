@@ -7,7 +7,7 @@
 #define PLAYERSPAWN Vector2D {160/2,90-5};
 
 // Nombre d'alien A dans le niveau
-#define NBRAALIEN 300
+#define NBRAALIEN 200
 
 // Nombre d'alien B qui spawn dans le niveau
 #define NBRBALIEN 10
@@ -15,9 +15,9 @@
 #define PLAYERHEALTH 2
 #define NBRPLAYERLASER 50
 
-#define NBRROCK 200
+#define NBRROCK 600
 
-#define NBRALIENLASER 150
+#define NBRALIENLASER 50
 
 // Data de l'alien A
 #define AALIENHEALTH 1

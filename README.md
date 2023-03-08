@@ -86,3 +86,4 @@ Et la liste des objets à supprimer à la prochaine frame.
 
 - J'ai transformer le render pour qu'il puisse être passer de SFML à console.
 	- Du coup j'ai passer l'enum dans une classe à part pour que les objects soit indepant du render
+	- pour le moment vers 500 alien le sfml tiens bien 👍

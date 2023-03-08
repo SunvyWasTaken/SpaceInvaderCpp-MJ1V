@@ -33,9 +33,9 @@ void AlienLaser::Update(PlayField& world)
 	}
 	for (const auto& Object : world.GameObjects())
 	{
-		if (Object->IsType("Rock"))
+		if (Object->IsType("Rock") || Object->IsType("PlayerLaser"))
 		{
-			if (pos.IntCmp(Object->pos))
+			if (pos.IntCmp(Object->pos) || pos.IntCmp(Object->pos + Vector2D(0,1)))
 			{
 				deleted = true;
 				break;

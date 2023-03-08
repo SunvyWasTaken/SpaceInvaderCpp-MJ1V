@@ -23,6 +23,11 @@ public:
 		return int(x) == int(vec.x) && int(y) == int(vec.y);
 	}
 
+	Vector2D operator+(const Vector2D& vec) const
+	{
+		return Vector2D(x + vec.x, y + vec.y);
+	}
+
 	float x;
 	float y;
 };

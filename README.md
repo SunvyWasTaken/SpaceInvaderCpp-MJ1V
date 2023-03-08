@@ -28,6 +28,8 @@ Et la liste des objets à supprimer à la prochaine frame.
 
 - Du coup finalement trouver y avait un delete dans le player laser et du coup lorsque je demande à mon manager de delete il y a une erreur.
 
+- Ajout de l'operateur + dans le Vector2D. pour pouvoir calculer plus loin devant si il y a un laser pour eviter qu'il se passe sans se superposer
+
 ## Treshold 1
 - Separation des class pour éviter que tous soit dans un seul fichier.
 	- J'ai aussi rangé les fichiers pour éviter de mettre `../` sur certain de mes includes.
@@ -87,7 +89,9 @@ Et la liste des objets à supprimer à la prochaine frame.
 	- j'avais try un ça mais il a vraiment pas aimer `std::thread t1(&PlayField::SpawnAlien<Alien>, GetWorld());`
 	![image error](/ImgREADME/ThreadError.jpg)
 
-- Renommage de la Solution 
+- Renommage de la Solution
+
+- Settup des propriéter du projet pour supporter SFML en RELEASE
 
 #### Ajout de SFML
 - Succée j'arrivais pas parce que je m'étais projectDir et non pas solutionDir.

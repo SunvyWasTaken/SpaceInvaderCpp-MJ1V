@@ -6,7 +6,7 @@ class Alien : public GameObject
 public:
 	Alien();
 
-private:
+protected:
 	float health;
 	float energy;
 	float direction;

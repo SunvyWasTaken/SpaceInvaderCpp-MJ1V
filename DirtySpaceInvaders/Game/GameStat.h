@@ -4,27 +4,27 @@
 
 // Size du world
 // Peut être casser si le world bound est trop grand dans le render console
-#define WORLDBOUND Vector2D {80, 24};
+#define WORLDBOUND Vector2D {160, 90};
 
 // Coord du spawn du player à faire attention qu'elle soit compris dans les bordure du world
-#define PLAYERSPAWN Vector2D {80/2, 24-5};
+#define PLAYERSPAWN Vector2D {160/2, 90-5};
 
 #define FRAMERATE 60
 
 // Nombre d'alien dans le niveau
-#define NBRALIEN 2
+#define NBRALIEN 50
 
 // Nombre de point de vie du player
 #define PLAYERHEALTH 2
 
 // Nombre de laser du player
-#define NBRPLAYERLASER 5
+#define NBRPLAYERLASER 50
 
 // Nombre de Roche dans le monde
 #define NBRROCK 50
 
 // Nombre de laser Alien max
-#define NBRALIENLASER 10
+#define NBRALIENLASER 160
 
 // Data de l'alien A
 #define AALIENHEALTH 1
@@ -37,10 +37,10 @@
 
 
 // Data de l'alien B
-#define BALIENHEALTH 1
+#define BALIENHEALTH 2
 // Energy de l'alien B
 #define BALIENENERGY 0
 // Direction de l'alien B
 #define BALIENDIRECTION 1
 // Velocity de l'alien B
-#define BALIENVELOCITY 0.5f
+#define BALIENVELOCITY 1.f

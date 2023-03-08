@@ -15,7 +15,7 @@ PlayField::PlayField(Vector2D iBounds) : bounds(iBounds), controllerInput(nullpt
 	PlayerLasers = NBRPLAYERLASER;
 
 	xCoord = intRand(0, (int)iBounds.x - 1);
-	yCoord = intRand(0, (int)iBounds.y / 2);
+	yCoord = intRand(0, (int)iBounds.y - 20);
 }
 
 void PlayField::Init()
@@ -49,7 +49,7 @@ void PlayField::Update()
 		}
 		ObjectsToDestroy.clear();
 	}
-	if (!IsShipLeft("AlienShip"))
+    if (!IsShipLeft("AlienShip"))
 	{
 		SpawnAlien<AlienStonk>();
 	}
@@ -173,8 +173,11 @@ void PlayField::SpawnAlien()
 		for (int k = 0; k < NBRALIEN; k++)
 		{
 			Alien* a = new T();
-			a->pos.x = (float)xCoord(*GetrGen());
-			a->pos.y = (float)yCoord(*GetrGen());
+			int Y = (int)yCoord(*GetrGen());
+			int X = (int)xCoord(*GetrGen());
+
+			a->pos.x = X;
+			a->pos.y = Y;
 			GetWorld()->AddObject(a);
 		}
 	}

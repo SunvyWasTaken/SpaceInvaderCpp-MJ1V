@@ -24,6 +24,7 @@
     <ProjectGuid>{02e37fbd-379c-4a7e-8f03-bc7734af5b88}</ProjectGuid>
     <RootNamespace>DirtySpaceInvaders</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>NotSpaceVader</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

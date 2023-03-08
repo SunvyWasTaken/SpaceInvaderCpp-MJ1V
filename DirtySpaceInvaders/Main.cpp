@@ -5,7 +5,6 @@
 #include "Game/GameStat.h"
 
 #include <SFML/Window/Keyboard.hpp>
-#include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
 #include <iostream>

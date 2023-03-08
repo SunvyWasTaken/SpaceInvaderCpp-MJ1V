@@ -9,7 +9,7 @@
 // Coord du spawn du player à faire attention qu'elle soit compris dans les bordure du world
 #define PLAYERSPAWN Vector2D {160/2, 90-5};
 
-#define FRAMERATE 60
+#define FRAMERATE 120
 
 // Nombre d'alien dans le niveau
 #define NBRALIEN 50
@@ -18,13 +18,13 @@
 #define PLAYERHEALTH 2
 
 // Nombre de laser du player
-#define NBRPLAYERLASER 50
+#define NBRPLAYERLASER 150
 
 // Nombre de Roche dans le monde
-#define NBRROCK 50
+#define NBRROCK 150
 
 // Nombre de laser Alien max
-#define NBRALIENLASER 160
+#define NBRALIENLASER 0
 
 // Data de l'alien A
 #define AALIENHEALTH 1

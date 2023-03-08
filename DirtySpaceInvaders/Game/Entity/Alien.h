@@ -15,4 +15,9 @@ protected:
 	bool DecreaseHealth() { health -= 1.f; return health <= 0; }
 
 	void Update(PlayField& world);
+
+private:
+
+	void CollideForward();
+
 };

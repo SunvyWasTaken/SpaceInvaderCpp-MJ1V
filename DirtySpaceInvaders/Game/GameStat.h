@@ -4,10 +4,10 @@
 
 // Size du world
 // Peut être casser si le world bound est trop grand dans le render console
-#define WORLDBOUND Vector2D {160, 90};
+#define WORLDBOUND Vector2D {80, 25};
 
 // Coord du spawn du player à faire attention qu'elle soit compris dans les bordure du world
-#define PLAYERSPAWN Vector2D {160/2, 90-5};
+#define PLAYERSPAWN Vector2D {80/2, 25-5};
 
 #define FRAMERATE 120
 

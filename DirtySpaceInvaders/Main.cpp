@@ -66,7 +66,6 @@ int main()
 	Vector2D WorldBound = WORLDBOUND;
 	#if SFMLRENDER
 	RenderManager = new RenderSFML(WorldBound);
-	RenderManager->Init();
 	#else
 	RenderManager = new ConsoleRenderer(WorldBound);
 	#endif

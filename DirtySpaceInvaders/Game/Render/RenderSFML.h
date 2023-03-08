@@ -1,9 +1,13 @@
 #pragma once
 #include "RenderMgr.h"
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/RectangleShape.hpp>
 
-
+namespace sf
+{
+    class Color;
+    class RectangleShape;
+    class RenderWindow;
+    class Texture;
+}
 
 class RenderSFML :
     public RenderMgr
@@ -28,6 +32,10 @@ private:
 
     sf::RectangleShape* Tampax;
 
+    sf::Texture* textureSheet;
+
     sf::Color GetSprite(enum ERaiderSprites _Sprite);
+
+    int GetInRect(enum ERaiderSprites _sprite);
 };
 

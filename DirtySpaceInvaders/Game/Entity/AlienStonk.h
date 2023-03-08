@@ -3,5 +3,8 @@
 class AlienStonk :
     public Alien
 {
+public:
+    AlienStonk();
+
 };
 

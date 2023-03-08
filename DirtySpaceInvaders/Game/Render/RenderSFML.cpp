@@ -72,7 +72,7 @@ sf::Color RenderSFML::GetSprite(ERaiderSprites _Sprite)
 		return sf::Color::Red;
 		break;
 	case RS_BetterAlien:
-		return sf::Color::Blue;
+		return sf::Color::Cyan;
 		break;
 	case RS_PlayerLaser:
 		return sf::Color::Green;

@@ -5,7 +5,6 @@
 #include "Game/Entity/GameObject.h"
 
 #include <Windows.h>
-#include <thread>
 #include <SFML/Window/Keyboard.hpp>
 
 void setCursorPosition(int x, int y)
@@ -16,7 +15,7 @@ void setCursorPosition(int x, int y)
 	SetConsoleCursorPosition(hOut, coord);
 }
 
-Renderer::Renderer(const Vector2D& bounds)
+ConsoleRenderer::ConsoleRenderer(const Vector2D& bounds)
 	: RenderMgr(bounds), renderBounds(bounds)
 {
 	canvasSize = (int)(bounds.x * bounds.y);
@@ -25,16 +24,16 @@ Renderer::Renderer(const Vector2D& bounds)
 }
 
 
-Renderer::~Renderer()
+ConsoleRenderer::~ConsoleRenderer()
 {
 	delete[] disp[0].canvas;
 	delete[] disp[1].canvas;
 }
 
-void Renderer::Update(const RenderItemList& RenderList)
+void ConsoleRenderer::Update(const RenderItemList& RenderList)
 {
 	ERaiderSprites background = ERaiderSprites::RS_BackgroundTile;
-	FillCanvas(GetSprite(background));
+	FillCanvas(' ');
 
 	for (auto ri : RenderList)
 	{
@@ -48,7 +47,7 @@ void Renderer::Update(const RenderItemList& RenderList)
 	}
 }
 
-void Renderer::Update()
+void ConsoleRenderer::Update()
 {
 	RenderItemList rl;
 	// change to character
@@ -59,16 +58,9 @@ void Renderer::Update()
 	}
 
 	Update(rl);
-
-	// Sleep a bit so updates don't run too fast
-	std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) || !GetWorld()->GetPlayerObject())
-	{
-		exit(0);
-	}
 }
 
-unsigned Renderer::GetSprite(ERaiderSprites& _sprite)
+unsigned ConsoleRenderer::GetSprite(ERaiderSprites& _sprite)
 {
 	switch (_sprite)
 	{
@@ -102,7 +94,7 @@ unsigned Renderer::GetSprite(ERaiderSprites& _sprite)
 	return 0;
 }
 
-void Renderer::FillCanvas(unsigned char sprite)
+void ConsoleRenderer::FillCanvas(unsigned char sprite)
 {
 	for (int i = 0; i < canvasSize; i++)
 	{
@@ -110,7 +102,7 @@ void Renderer::FillCanvas(unsigned char sprite)
 	}
 }
 
-void Renderer::Draw()
+void ConsoleRenderer::Draw()
 {
 	for (int y = 0; y < renderBounds.y; y++)
 	{

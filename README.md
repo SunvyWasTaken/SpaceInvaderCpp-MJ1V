@@ -79,11 +79,16 @@ Et la liste des objets à supprimer à la prochaine frame.
 	- j'ai convertie la fonction decreaseHealth en fonction virtuel pour l'override dans le Alien et le Player.
 	- Ajout aussi d'une variable vie dans le PlayerShip et AlienShip.
 
+- J'ai déplacer les differents Spawn dans le playfield.
+
+- J'ai voulu ajouter un thread pour spawn les aliens en differer mais j'avais une erreur [image error](/ImgREADME/ThreadError.jpg)
+
 #### Ajout de SFML
 - Succée j'arrivais pas parce que je m'étais projectDir et non pas solutionDir.
 
-- Ajout de la musique je les mis à 50 de base parce que un peu fort pour moi.
+- Ajout de la musique je les mis à 20 de base parce que un peu fort pour moi.
 
 - J'ai transformer le render pour qu'il puisse être passer de SFML à console.
 	- Du coup j'ai passer l'enum dans une classe à part pour que les objects soit indepant du render
 	- pour le moment vers 500 alien le sfml tiens bien 👍
+	- Le World bound s'adapte à la size de l'écran de SFML.

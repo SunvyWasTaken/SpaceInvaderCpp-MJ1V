@@ -17,14 +17,13 @@
 
 
 #define SFMLRENDER true
-
+             
 #if SFMLRENDER
 	#include "Game/Render/RenderSFML.h"
 #else
 	#include "Game/Render/ConsoleRenderer.h"
 #endif
 
-typedef std::uniform_int_distribution<int> intRand;
 typedef std::uniform_real_distribution<float> floatRand;
 
 std::default_random_engine rGen;
@@ -63,42 +62,14 @@ int main()
 	RenderSFML RenderManager(WorldBound);
 	RenderManager.Init();
 	#else
-	Renderer RenderManager(WorldBound);
+	ConsoleRenderer RenderManager(WorldBound);
 	#endif
 	#undef SFMLRENDER
 
 	world = new PlayField(WorldBound);
 
-	intRand xCoord(0, (int)WorldBound.x- 1);
-	intRand yCoord(0, (int)WorldBound.y / 2);
+	world->Init();
 
-	// Populate aliens
-	for (int k = 0; k < NBRAALIEN; k++)
-	{
-		Alien* a = new Alien();
-		a->pos.x = (float)xCoord(rGen);
-		a->pos.y = (float)yCoord(rGen);
-		world->AddObject(a);
-	}
-
-	// ajour des roches
-	for (int i = 0; i < NBRROCK; i++)
-	{
-		ARock* r = new ARock();
-		r->pos.x = (float)xCoord(rGen);
-		r->pos.y = (float)yCoord(rGen);
-		world->AddObject(r);
-	}
-
-	// set a controller.
-	Input* CurrentInput = new PlayerInput();
-	world->SetController(CurrentInput);
-
-	// Add player
-	PlayerShip* p = new PlayerShip();
-	Vector2D PlayerSpawn = PLAYERSPAWN;
-	p->pos = PlayerSpawn;
-	world->AddObject(p);
 #include "Game/UndefAllStat.h"
 
 	while (RenderManager.isOpen)

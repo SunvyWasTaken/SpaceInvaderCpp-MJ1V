@@ -13,11 +13,11 @@ struct RenderItem
 };
 typedef std::vector<RenderItem> RenderItemList;
 
-class Renderer : public RenderMgr
+class ConsoleRenderer : public RenderMgr
 {
 public:
-	Renderer(const Vector2D& bounds);
-	~Renderer();
+	ConsoleRenderer(const Vector2D& bounds);
+	~ConsoleRenderer();
 
 	// Draws all game objects after clearing filling the Canvas with _ symbol
 	void Update(const RenderItemList& renderList);

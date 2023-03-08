@@ -1,14 +1,30 @@
 #include "PlayField.h"
 #include "Game/Engine/Vector.h"
 #include "Game/Entity/GameObject.h"
+#include "Game/GameStat.h"
+#include "Game/Entity/AlienStonk.h"
+#include "Game/Entity/Rock.h"
+#include "Game/Entity/PlayerShip.h"
+
+#include <thread>
+#include <functional>
 
 PlayField::PlayField(Vector2D iBounds) : bounds(iBounds), controllerInput(nullptr)
 {
-#include "Game/GameStat.h"
 	AlienLasers = NBRALIENLASER;
 	PlayerLasers = NBRPLAYERLASER;
-#include "Game/UndefAllStat.h"
 
+	xCoord = intRand(0, (int)iBounds.x - 1);
+	yCoord = intRand(0, (int)iBounds.y / 2);
+}
+
+void PlayField::Init()
+{
+	std::thread t1(&PlayField::SpawnAlien<Alien>, GetWorld());
+
+	SpawnRock();
+	SpawnPlayer();
+	controllerInput = new PlayerInput();
 }
 
 void PlayField::Update()
@@ -33,6 +49,13 @@ void PlayField::Update()
 		}
 		ObjectsToDestroy.clear();
 	}
+	if (!IsShipLeft("AlienShip"))
+	{
+		std::thread t1(&PlayField::SpawnAlien<Alien>, GetWorld());
+	}
+
+	// Sleep a bit so updates don't run too fast
+	std::this_thread::sleep_for(std::chrono::milliseconds(30));
 }
 
 GameObject* PlayField::GetPlayerObject()
@@ -92,3 +115,54 @@ void PlayField::RemoveObject(GameObject* newObj)
 	}
 	ObjectsToDestroy.push_back(newObj);
 }
+
+bool PlayField::IsShipLeft(const char* _Name)
+{
+	for (const auto CurrentObject : gameObjects)
+	{
+		if (CurrentObject->IsType(_Name))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+void PlayField::SpawnPlayer()
+{
+	PlayerShip* p = new PlayerShip();
+	Vector2D PlayerSpawn = PLAYERSPAWN;
+	p->pos = PlayerSpawn;
+	GetWorld()->AddObject(p);
+}
+
+void PlayField::SpawnRock()
+{
+	// ajour des roches
+	for (int i = 0; i < NBRROCK; i++)
+	{
+		ARock* r = new ARock();
+		r->pos.x = (float)xCoord(*GetrGen());
+		r->pos.y = (float)yCoord(*GetrGen());
+		GetWorld()->AddObject(r);
+	}
+}
+
+template <class T>
+void PlayField::SpawnAlien()
+{
+	std::this_thread::sleep_for(std::chrono::seconds(2));
+	if (std::is_base_of<Alien, T>::value)
+	{
+		for (int k = 0; k < NBRALIEN; k++)
+		{
+			Alien* a = new Alien();
+			a->pos.x = (float)xCoord(*GetrGen());
+			a->pos.y = (float)yCoord(*GetrGen());
+			GetWorld()->AddObject(a);
+		}
+	}
+	return;
+}
+
+#include "Game/UndefAllStat.h"

@@ -3,14 +3,12 @@
 
 #undef PLAYERSPAWN
 
-#undef NBRAALIEN
+#undef NBRALIEN
 
 #undef PLAYERHEALTH
 #undef NBRPLAYERLASER
 
 #undef NBRROCK
-
-#undef NBRALIENLASER
 
 #undef AALIENHEALTH
 #undef AALIENENERGY

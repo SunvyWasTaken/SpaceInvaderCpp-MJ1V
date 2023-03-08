@@ -1,8 +1,12 @@
 #pragma once
 #include "Game/Input/Input.h"
 #include "Vector.h"
+#include "Game/Entity/Alien.h"
 
 #include <vector>
+#include <type_traits>
+
+typedef std::uniform_int_distribution<int> intRand;
 
 namespace sf
 {
@@ -21,6 +25,9 @@ private:
 	std::vector<GameObject*> ObjectsToDestroy;
 	// Object to add on the next frame.
 	std::vector<GameObject*> ObjectToAdd;
+
+	intRand xCoord;
+	intRand yCoord;
 
 public:
 	Vector2D bounds;
@@ -51,6 +58,8 @@ public:
 
 public:
 
+	void Init();
+
 	void SpawnLaser(GameObject* newObj);
 
 	void DespawnLaser(GameObject* newObj);
@@ -58,8 +67,22 @@ public:
 	void AddObject(GameObject* newObj);
 
 	void RemoveObject(GameObject* newObj);
+
+	bool IsShipLeft(const char* _Name);
+
+
+protected:
+
+	void SpawnPlayer();
+
+	template <class T>
+	void SpawnAlien();
+
+	void SpawnRock();
+
 };
 
 std::default_random_engine* GetrGen();
 
 PlayField* GetWorld();
+

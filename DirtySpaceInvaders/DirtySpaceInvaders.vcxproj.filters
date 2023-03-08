@@ -88,7 +88,7 @@
       <Filter>Header Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="Game\Render\RenderSFML.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

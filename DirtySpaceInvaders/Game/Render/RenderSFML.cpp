@@ -71,6 +71,7 @@ void RenderSFML::Draw()
 	pWindow->display();
 }
 
+// Oui à la main parce que plus le temps
 int RenderSFML::GetInRect(ERaiderSprites _sprite)
 {
 	switch (_sprite)
@@ -89,7 +90,7 @@ int RenderSFML::GetInRect(ERaiderSprites _sprite)
 		break;
 	case RS_Explosion: return 180;
 		break;
-	case RS_Rock: return 210;
+	case RS_Rock: return 211;
 		break;
 	}
 }

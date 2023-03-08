@@ -17,8 +17,7 @@ Alien::Alien()
 	velocity = AALIENVELOCITY;
 #include "Game/UndefAllStat.h"
 
-	m_objType = new char[64];
-	strcpy(m_objType, "AlienShip");
+	m_objType = "AlienShip";
 	sprite = RS_Alien;
 }
 

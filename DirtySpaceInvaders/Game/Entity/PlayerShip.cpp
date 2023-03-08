@@ -8,8 +8,8 @@
 
 PlayerShip::PlayerShip() : Health(PLAYERHEALTH)
 {
-	m_objType = new char[64];
-	strcpy(m_objType, "PlayerShip");
+
+	m_objType = "PlayerShip";
 	sprite = RS_Player;
 }
 

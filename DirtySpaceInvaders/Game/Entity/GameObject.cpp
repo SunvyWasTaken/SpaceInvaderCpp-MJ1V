@@ -1,14 +1,12 @@
 #include "GameObject.h"
 #include <iostream>
 
+#include <string>
 
 GameObject::~GameObject()
-{
-	if (m_objType)
-		delete[] m_objType;
-}
+{}
 
 bool GameObject::IsType(const char* type)
 {
-	return strcmp(m_objType, type) == 0;
+	return !m_objType.compare(type);
 }

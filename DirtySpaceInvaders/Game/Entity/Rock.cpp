@@ -5,8 +5,7 @@
 
 ARock::ARock()
 {
-	m_objType = new char[64];
-	strcpy(m_objType, "Rock");
+	m_objType = "Rock";
 	sprite = RS_Rock;
 }
 

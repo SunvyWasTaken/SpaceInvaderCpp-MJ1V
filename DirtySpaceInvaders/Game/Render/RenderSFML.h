@@ -12,7 +12,7 @@ public:
 
     RenderSFML(const Vector2D& _size);
 
-    ~RenderSFML() override;
+    ~RenderSFML();
 
     void Init();
 

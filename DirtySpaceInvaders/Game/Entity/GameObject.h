@@ -1,5 +1,6 @@
 #pragma once
 #include "Game/Engine/Vector.h"
+#include <string>
 
 class PlayField;
 
@@ -7,7 +8,7 @@ class GameObject
 {
 public:
 	~GameObject();
-	char* m_objType = nullptr;
+	std::string m_objType;
 	Vector2D pos;
 	enum ERaiderSprites sprite;
 

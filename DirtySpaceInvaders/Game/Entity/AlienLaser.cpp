@@ -6,8 +6,7 @@
 
 AlienLaser::AlienLaser()
 {
-	m_objType = new char[64];
-	strcpy(m_objType, "AlienLaser");
+	m_objType = "AlienLaser";
 	sprite = RS_AlienLaser;
 }
 
@@ -21,9 +20,16 @@ void AlienLaser::Update(PlayField& world)
 	}
 
 	GameObject* player = world.GetPlayerObject();
-	if (!player)
+	if (player)
 	{
-		return;
+		if (pos.IntCmp(player->pos))
+		{
+			deleted = true;
+			if (player->DecreaseHealth())
+			{
+				world.RemoveObject(player);
+			}
+		}
 	}
 	for (const auto& Object : world.GameObjects())
 	{
@@ -34,14 +40,6 @@ void AlienLaser::Update(PlayField& world)
 				deleted = true;
 				break;
 			}
-		}
-	}
-	if (pos.IntCmp(player->pos))
-	{
-		deleted = true;
-		if (player->DecreaseHealth())
-		{
-			world.RemoveObject(player);
 		}
 	}
 	if (deleted)

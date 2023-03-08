@@ -17,7 +17,7 @@ class ConsoleRenderer : public RenderMgr
 {
 public:
 	ConsoleRenderer(const Vector2D& bounds);
-	~ConsoleRenderer() override;
+	~ConsoleRenderer();
 
 	// Draws all game objects after clearing filling the Canvas with _ symbol
 	void Update(const RenderItemList& renderList);

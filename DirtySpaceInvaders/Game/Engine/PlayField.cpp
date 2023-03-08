@@ -60,11 +60,14 @@ void PlayField::Update()
 
 GameObject* PlayField::GetPlayerObject()
 {
-	auto it = std::find_if(gameObjects.begin(), gameObjects.end(), [](GameObject* in) { return (strcmp(in->m_objType, "PlayerShip") == 0); });
-	if (it != gameObjects.end())
-		return (*it);
-	else
-		return nullptr;
+	for (auto* it : gameObjects)
+	{
+		if (it->IsType("PlayerShip"))
+		{
+			return it;
+		}
+	}
+	return nullptr;
 }
 
 void PlayField::SetController(Input* InputRef)
@@ -151,13 +154,6 @@ void PlayField::SpawnRock()
 void PlayField::QuitGame()
 {
 	for (auto* curEntity : ObjectToAdd)
-	{
-		if ()
-		{
-		}
-		delete curEntity;
-	}	
-	for (auto* curEntity : ObjectsToDestroy)
 	{
 		delete curEntity;
 	}

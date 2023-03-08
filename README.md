@@ -85,6 +85,8 @@ Et la liste des objets à supprimer à la prochaine frame.
 	- j'avais try un ça mais il a vraiment pas aimer `std::thread t1(&PlayField::SpawnAlien<Alien>, GetWorld());`
 	![image error](/ImgREADME/ThreadError.jpg)
 
+- Renommage de la Solution 
+
 #### Ajout de SFML
 - Succée j'arrivais pas parce que je m'étais projectDir et non pas solutionDir.
 

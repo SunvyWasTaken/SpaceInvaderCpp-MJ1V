@@ -152,6 +152,9 @@ void PlayField::QuitGame()
 {
 	for (auto* curEntity : ObjectToAdd)
 	{
+		if ()
+		{
+		}
 		delete curEntity;
 	}	
 	for (auto* curEntity : ObjectsToDestroy)

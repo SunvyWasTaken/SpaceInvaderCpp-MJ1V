@@ -63,6 +63,8 @@ sf::Color RenderSFML::GetSprite(ERaiderSprites _Sprite)
 {
 	switch (_Sprite)
 	{
+	case RS_BackgroundTile:
+		break;
 	case RS_Player:
 		return sf::Color::Blue;
 		break;
@@ -78,11 +80,12 @@ sf::Color RenderSFML::GetSprite(ERaiderSprites _Sprite)
 	case RS_AlienLaser:
 		return sf::Color::Magenta;
 		break;
+	case RS_Explosion:
+		break;
 	case RS_Rock:
 		return sf::Color::Yellow;
 		break;
 	default:
-		return sf::Color::Black;
 		break;
 	}
 }
